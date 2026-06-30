@@ -1,2 +1,62 @@
 :root{--cream:#fbf4e8;--latte:#e9d6bd;--coffee:#5a321d;--espresso:#2a160c;--caramel:#b77945;--white:#fffdf8;--muted:#6d594d;--shadow:0 24px 70px rgba(65,35,17,.18)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Assistant',Arial,sans-serif;background:var(--cream);color:var(--espresso);line-height:1.75;font-size:18px;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.container{width:min(1120px,92vw);margin:auto}.section{padding:92px 0}.narrow{width:min(840px,92vw)}.eyebrow{color:var(--caramel);font-weight:800;letter-spacing:.08em;margin:0 0 10px}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(48px,8vw,96px);line-height:.92;margin-bottom:10px;color:var(--coffee)}h2{font-size:clamp(30px,4vw,52px);line-height:1.08;margin-bottom:22px;color:var(--coffee)}h3{font-size:25px;margin-bottom:8px}.lead{font-size:23px;color:var(--muted);max-width:660px}.hero{position:relative;min-height:92vh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 20% 10%,#fff 0,#fbf4e8 30%,#ead7bf 100%)}.hero-bg:before,.hero-bg:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.45}.hero-bg:before{width:380px;height:380px;background:#d5a573;top:-80px;left:-80px}.hero-bg:after{width:540px;height:540px;background:#fff8ed;bottom:-120px;right:-120px}.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.hero-content{z-index:2}.hero-actions,.cta-actions{display:flex;gap:16px;flex-wrap:wrap;margin:30px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border-radius:999px;font-weight:800;box-shadow:0 12px 30px rgba(80,40,20,.12);transition:.25s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--coffee);color:white}.primary.light{background:var(--caramel)}.secondary{background:rgba(255,255,255,.72);border:1px solid rgba(90,50,29,.18);color:var(--coffee)}.social-proof{font-weight:800;color:var(--coffee)}.cover-wrap{display:flex;justify-content:center}.book-cover{border-radius:18px;box-shadow:var(--shadow);transform:rotate(-2deg);transition:.35s}.book-cover:hover{transform:rotate(0deg) translateY(-10px)}.intro{background:var(--white)}.intro p{font-size:21px;color:var(--muted)}.features{background:linear-gradient(180deg,var(--cream),#f3e3cf)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:rgba(255,255,255,.7);padding:28px;border:1px solid rgba(90,50,29,.10);border-radius:28px;box-shadow:0 15px 45px rgba(80,40,20,.07)}.card span{font-size:34px}.card p{color:var(--muted)}.illustration-card{display:grid;grid-template-columns:.9fr 1fr;gap:42px;align-items:center;background:#fffaf1;padding:34px;border-radius:34px;box-shadow:var(--shadow)}.illustration-card img{border-radius:26px;max-height:560px;width:100%;object-fit:cover}.reviews{background:var(--white)}.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:30px 0 44px}.quote-grid blockquote{margin:0;background:var(--cream);padding:26px;border-radius:24px;border-right:5px solid var(--caramel);color:var(--muted)}cite{display:block;margin-top:14px;font-style:normal;font-weight:800;color:var(--coffee)}.review-gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:start}.review-gallery img{border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.10);background:#fff}.author{background:linear-gradient(135deg,#f8ead8,#fffaf1)}.author-card{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center;background:rgba(255,255,255,.65);padding:34px;border-radius:34px;box-shadow:var(--shadow)}.author-card img{border-radius:28px;max-height:620px;width:100%;object-fit:cover}.author-card p{font-size:21px;color:var(--muted)}.cta{text-align:center;background:var(--coffee);color:white}.cta h2{color:white}.cta p{color:#f4dfca}.cta .secondary{background:white}.footer{padding:28px 0;background:#1f1009;color:#f7eadb}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer nav{display:flex;gap:18px;flex-wrap:wrap}.footer a{opacity:.9}.whatsapp-float{position:fixed;left:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:white;font-size:27px;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:20}.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}@media(max-width:900px){.section{padding:64px 0}.hero-grid,.illustration-card,.author-card{grid-template-columns:1fr}.cover-wrap{order:-1}.book-cover{max-height:520px}.cards,.quote-grid{grid-template-columns:1fr}.review-gallery{grid-template-columns:repeat(2,1fr)}body{font-size:17px}.lead{font-size:20px}}@media(max-width:520px){.hero-actions,.cta-actions{flex-direction:column}.btn{width:100%}.review-gallery{grid-template-columns:1fr}.footer-inner{display:block;text-align:center}.footer nav{justify-content:center;margin-top:12px}.whatsapp-float{left:16px;bottom:16px}}
+/* --- עיצוב כפתור הדואט בגוון טורקיז של בריסטה --- */
+.btn.btn-turquoise {
+  background-color: #00a896 !important;
+  color: #ffffff !important;
+  border-color: #00a896 !important;
+}
+.btn.btn-turquoise:hover {
+  background-color: #008f80 !important;
+  border-color: #008f80 !important;
+  transform: translateY(-2px);
+}
+
+/* --- מבנה קרוסלה משודרגת עם חצים בצדדים --- */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 750px;
+  margin: 30px auto 0 auto;
+  gap: 15px;
+}
+.carousel-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 35px;
+  text-align: center;
+  border: 1px solid var(--latte);
+}
+.carousel-track {
+  display: flex;
+  width: 300%;
+  animation: slideCarousel 16s infinite ease-in-out;
+}
+.carousel-slide {
+  width: 100%;
+  flex: 1;
+  padding: 0 10px;
+}
+.carousel-arrow {
+  font-size: 1.8rem;
+  color: var(--coffee);
+  opacity: 0.6;
+  user-select: none;
+  cursor: default;
+  transition: opacity 0.2s;
+}
+.carousel-arrow:hover {
+  opacity: 1;
+}
+
+@keyframes slideCarousel {
+  0%, 28% { transform: translateX(0); }
+  33%, 61% { transform: translateX(33.333%); }
+  66%, 95% { transform: translateX(66.666%); }
+  100% { transform: translateX(0); }
+}
