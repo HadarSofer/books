@@ -10,26 +10,26 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// לוגיקה חכמה לקרוסלה - עובדת עם העכבר גם במחשב וגם בנייד
+// לוגיקה לקרוסלה - פותר תקיעות במחשב ובנייד
 let currentSlide = 0;
-const totalSlides = 5; // מספר ההמלצות הכולל בקרוסלה הזזה
+const totalSlides = 5; // עודכן ל-5 שקפים
 
 function moveCarousel(direction) {
   currentSlide += direction;
   
-  // הגנה ומעבר מעגלי בין השקפים
+  // מעבר מעגלי תקין בין השקפים
   if (currentSlide < 0) {
     currentSlide = totalSlides - 1;
   } else if (currentSlide >= totalSlides) {
     currentSlide = 0;
   }
   
-  // מוצא את כל מסילות הקרוסלה באתר (גם של המחשב וגם של הנייד)
-  const tracks = document.querySelectorAll('#carouselTrack');
+  // בחירת כל מסילות הקרוסלה הקיימות בדף כדי למנוע התנגשויות CSS במחשב
+  const tracks = document.querySelectorAll('.carousel-track, #carouselTrack');
   
   tracks.forEach(track => {
     if (track) {
-      // מזיז בצעדים של 20% (חיובי בגלל שהאתר ב-RTL)
+      // הזזה מדויקת לפי אחוזים (צעדים של 20% בגלל RTL)
       track.style.transform = `translateX(${currentSlide * 20}%)`;
     }
   });
