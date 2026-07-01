@@ -1,4 +1,4 @@
-// מנגנון ה-Reveal המודרני והמעולה שלך (IntersectionObserver)
+// מנגנון ה-Reveal המעולה שלך (IntersectionObserver)
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -10,23 +10,27 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// לוגיקה מעודכנת לקרוסלה עם 5 המלצות (20% לכל שקף) ופעולה חלקה ב-RTL
+// לוגיקה חכמה לקרוסלה - עובדת עם העכבר גם במחשב וגם בנייד
 let currentSlide = 0;
-const totalSlides = 5; // עודכן ל-5 המלצות
+const totalSlides = 5; // מספר ההמלצות הכולל בקרוסלה הזזה
 
 function moveCarousel(direction) {
   currentSlide += direction;
   
-  // מעבר מעגלי תקין בין השקפים
+  // הגנה ומעבר מעגלי בין השקפים
   if (currentSlide < 0) {
     currentSlide = totalSlides - 1;
   } else if (currentSlide >= totalSlides) {
     currentSlide = 0;
   }
   
-  const track = document.getElementById('carouselTrack');
-  if (track) {
-    // תיקון נקודה: style.transform. זז בצעדים של 20% ימינה ושמאלה
-    track.style.transform = `translateX(${currentSlide * 20}%)`;
-  }
+  // מוצא את כל מסילות הקרוסלה באתר (גם של המחשב וגם של הנייד)
+  const tracks = document.querySelectorAll('#carouselTrack');
+  
+  tracks.forEach(track => {
+    if (track) {
+      // מזיז בצעדים של 20% (חיובי בגלל שהאתר ב-RTL)
+      track.style.transform = `translateX(${currentSlide * 20}%)`;
+    }
+  });
 }
