@@ -58,15 +58,30 @@
   </header>
 
   <main>
-    <section class="section review-highlight" style="padding: 60px 0; background-color: rgba(233, 214, 189, 0.25); border-top: 2px solid var(--latte); border-bottom: 2px solid var(--latte);">
-      <div class="container" style="text-align: center; max-width: 850px; margin: 0 auto; padding: 0 20px;">
-        <span style="font-size: 4rem; color: var(--caramel); opacity: 0.4; display: block; line-height: 0; margin-bottom: 10px; font-family: Georgia, serif;">“</span>
-        <blockquote style="font-size: 1.55rem; line-height: 1.7; font-style: italic; margin: 0 0 20px 0; font-weight: 700; color: var(--espresso); border: none; padding: 0;">
-          הספר הוא רומן עלילתי הכתוב באופן חופשי, זורם ומלא נגיעות הומוריסטיות והוא יכול להיות מצע נהדר לשיח. חכם, רגיש, עדין...
-        </blockquote>
-        <cite style="font-size: 1.2rem; font-style: normal; font-weight: 800; color: var(--coffee);">— אודי בן חמו, "עולם קטן"</cite>
-      </div>
-    </section>
+<!-- כפתורי רכישה מהירים מעודכנים עם מחיר מחוק -->
+        <div class="hero-actions" style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin-top: 25px;">
+          <a class="btn primary btn-turquoise" href="https://meshulam.co.il/purchase?b=cf26a15d90583e101c40a8e2467d4413" target="_blank" rel="noopener">
+            הזמינו את הדואט המלא 
+            <span style="font-size:0.85rem; display:block; opacity:0.9; font-weight: 400;">
+              במקום <span style="text-decoration: line-through; opacity: 0.7;">196 ₪</span> | רק 120 ₪
+            </span>
+          </a>
+          <div style="display: flex; gap: 10px; width: 100%;">
+            <a class="btn primary" style="flex: 1; padding: 10px 5px; font-size: 0.95rem;" href="https://meshulam.co.il/purchase?b=3960c1d9ae10f39e191948188ecd9db6" target="_blank" rel="noopener">
+              הזמינו את בריסטה 
+              <span style="font-size:0.8rem; display:block; opacity:0.9; font-weight: 400;">
+                <span style="text-decoration: line-through; opacity: 0.7;">98 ₪</span> 65 ₪
+              </span>
+            </a>
+            <a class="btn primary light" style="flex: 1; padding: 10px 5px; font-size: 0.95rem;" href="https://meshulam.co.il/purchase?b=f9c1762773a8a9f286a3632289c96ef9" target="_blank" rel="noopener">
+              הזמינו את קרמה 
+              <span style="font-size:0.8rem; display:block; font-weight: 400;">
+                <span style="text-decoration: line-through; opacity: 0.7;">98 ₪</span> 65 ₪
+              </span>
+            </a>
+          </div>
+        </div>
+
 
     <section class="section intro">
       <div class="container narrow visible" style="opacity: 1; transform: none;">
@@ -144,31 +159,47 @@
       <div class="container visible" style="text-align: center; opacity: 1; transform: none;">
         <h2>מוכנים להתחיל לקרוא?</h2>
         <p style="margin-bottom: 20px; color: #f4dfca; font-size: 21px;">בחרו את הספר או הדואט המלא והתחילו במסע.</p>
-        
-        <div class="purchase-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 900px; margin: 30px auto 40px auto;">
+ <div class="purchase-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 900px; margin: 30px auto 40px auto;">
+          
+          <!-- כרטיס דואט -->
           <div class="purchase-card" style="background: #ffffff; border: 1px solid var(--latte); border-radius: 28px; padding: 25px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: var(--shadow); flex: 1; min-width: 260px;">
             <img src="images/book-cover.png" alt="דואט קרמה ובריסטה" style="height: 220px; object-fit: contain; margin-bottom: 15px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);" />
-            <h4 style="font-size: 22px; font-weight:700; margin-bottom:15px; margin-top:0; color: var(--espresso);">הדואט המלא (קרמה + בריסטה)</h4>
+            <h4 style="font-size: 22px; font-weight:700; margin-bottom:10px; margin-top:0; color: var(--espresso);">הדואט המלא (קרמה + בריסטה)</h4>
+            <p style="font-size: 1.1rem; color: var(--coffee); margin: 0 0 15px 0; font-weight: 600;">
+              מחיר קטלוגי: <span style="text-decoration: line-through; opacity: 0.6; font-weight: 400;">196 ₪</span> <br>
+              <span style="color: #00a896; font-size: 1.3rem; font-weight: 800;">מחיר השקה: 120 ₪</span>
+            </p>
             <a class="btn primary btn-turquoise" style="width: 100%; margin-top: auto;" href="https://meshulam.co.il/purchase?b=cf26a15d90583e101c40a8e2467d4413" target="_blank" rel="noopener">
-              הזמינו את הדואט המלא <br> <span style="font-size: 0.85rem; font-weight: 400; opacity: 0.9;">מחיר מיוחד: 120 ₪</span>
+              הזמינו את הדואט המלא
             </a>
           </div>
 
+          <!-- כרטיס בריסטה -->
           <div class="purchase-card" style="background: #ffffff; border: 1px solid var(--latte); border-radius: 28px; padding: 25px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: var(--shadow); flex: 1; min-width: 260px;">
             <img src="images/Cover_Barista.jpeg" alt="כריכת הספר בריסטה" style="height: 220px; object-fit: contain; margin-bottom: 15px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);" />
-            <h4 style="font-size: 22px; font-weight:700; margin-bottom:15px; margin-top:0; color: var(--espresso);">הספר 'בריסטה'</h4>
+            <h4 style="font-size: 22px; font-weight:700; margin-bottom:10px; margin-top:0; color: var(--espresso);">הספר 'בריסטה'</h4>
+            <p style="font-size: 1.1rem; color: var(--coffee); margin: 0 0 15px 0; font-weight: 600;">
+              מחיר מלא: <span style="text-decoration: line-through; opacity: 0.6; font-weight: 400;">98 ₪</span> <br>
+              <span style="font-size: 1.3rem; font-weight: 800; color: var(--espresso);">באתר: 65 ₪</span>
+            </p>
             <a class="btn primary" style="width: 100%; margin-top: auto;" href="https://meshulam.co.il/purchase?b=3960c1d9ae10f39e191948188ecd9db6" target="_blank" rel="noopener">
-              הזמינו את בריסטה <br> <span style="font-size: 0.85rem; font-weight: 400; opacity: 0.9;">מחיר: 65 ₪</span>
+              הזמינו את בריסטה
             </a>
           </div>
 
+          <!-- כרטיס קרמה -->
           <div class="purchase-card" style="background: #ffffff; border: 1px solid var(--latte); border-radius: 28px; padding: 25px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: var(--shadow); flex: 1; min-width: 260px;">
             <img src="images/Cover_Crema.jpg" alt="כריכת הספר קרמה" style="height: 220px; object-fit: contain; margin-bottom: 15px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);" />
-            <h4 style="font-size: 22px; font-weight:700; margin-bottom:15px; margin-top:0; color: var(--espresso);">הספר 'קרמה'</h4>
+            <h4 style="font-size: 22px; font-weight:700; margin-bottom:10px; margin-top:0; color: var(--espresso);">הספר 'קרמה'</h4>
+            <p style="font-size: 1.1rem; color: var(--coffee); margin: 0 0 15px 0; font-weight: 600;">
+              מחיר מלא: <span style="text-decoration: line-through; opacity: 0.6; font-weight: 400;">98 ₪</span> <br>
+              <span style="font-size: 1.3rem; font-weight: 800; color: var(--espresso);">באתר: 65 ₪</span>
+            </p>
             <a class="btn primary light" style="width: 100%; margin-top: auto; color: white;" href="https://meshulam.co.il/purchase?b=f9c1762773a8a9f286a3632289c96ef9" target="_blank" rel="noopener">
-              הזמינו את קרמה <br> <span style="font-size: 0.85rem; font-weight: 400;">מחיר: 65 ₪</span>
+              הזמינו את קרמה
             </a>
           </div>
+
         </div>
 
         <hr style="border: 0; border-top: 1px solid var(--latte); max-width: 600px; margin: 40px auto 30px auto;" />
