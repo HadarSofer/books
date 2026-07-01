@@ -1,146 +1,293 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>המלצות קוראים | קרמה - בריסטה</title>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>המלצות קוראים | הדר סופר</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
-
+  
   <style>
-    body {
-      background-color: #fbf9f6;
+    :root {
+      --coffee: #4A3525;
+      --cream: #FDFBF7;
+      --accent: #D4A373;
+      --text: #2B2D42;
+      --white: #FFFFFF;
     }
-    /* עיצוב ייעודי למסך הצ'אט המלא */
-    .chat-page-bg {
-      max-width: 700px;
-      margin: 40px auto;
-      background-color: #efeae2; /* רקע וואטסאפ */
-      padding: 30px 20px;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* כותרת עליונה */
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    header h1 {
+      color: var(--coffee);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* גריד ההמלצות */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+      padding-bottom: 60px;
+    }
+
+    .review-card {
+      background: var(--white);
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(74, 53, 37, 0.04);
+      border: 1px solid rgba(212, 163, 115, 0.15);
       display: flex;
       flex-direction: column;
-      gap: 20px;
-    }
-    .chat-header {
-      text-align: center;
-      margin-bottom: 10px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    .chat-header h1 {
-      font-size: 1.8rem;
-      color: #8B5A2B;
-      margin-bottom: 5px;
-    }
-    .whatsapp-bubble {
-      background-color: #d9fdd3;
-      padding: 15px 18px;
-      border-radius: 12px 12px 0 12px;
-      align-self: flex-start;
-      max-width: 90%;
       position: relative;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .quote-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      opacity: 0.2;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      line-height: 1;
+      font-family: serif;
+    }
+
+    .review-text {
       font-size: 1.05rem;
-      line-height: 1.6;
-      color: #111b21;
+      color: var(--text);
+      white-space: pre-line; /* שומר על ירידות השורה המקוריות מהווטסאפ */
+      position: relative;
+      z-index: 1;
+      flex-grow: 1;
     }
-    .whatsapp-meta {
+
+    .review-footer {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed rgba(212, 163, 115, 0.25);
       display: flex;
-      justify-content: flex-end;
       align-items: center;
-      gap: 3px;
-      font-size: 0.75rem;
-      color: #667781;
-      margin-top: 6px;
+      justify-content: space-between;
     }
-    .whatsapp-ticks { color: #53bdeb; font-weight: bold; }
+
+    .reviewer-name {
+      font-weight: 700;
+      color: var(--coffee);
+      font-size: 0.95rem;
+    }
+
+    .review-tag {
+      background: #F4EAE1;
+      color: var(--coffee);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* כפתור חזרה */
+    .back-home {
+      display: inline-block;
+      margin-bottom: 40px;
+      color: var(--coffee);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+    }
     
-    .back-btn-wrap {
-      text-align: center;
-      margin-top: 30px;
+    .back-home:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .reviews-grid { grid-template-columns: 1fr; gap: 15px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- תפריט ניווט עליון אחיד (כדי לשמור על אותה חוויית אתר) -->
-  <nav class="main-nav" style="background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0;">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <div class="nav-logo" style="font-weight: 800; font-size: 1.3rem; color: #8B5A2B; font-family: 'Assistant', sans-serif;">
-        הדר סופר | אתר הסופרת
-      </div>
-      <div class="nav-links" style="display: flex; gap: 20px;">
-        <a href="index.html" style="text-decoration: none; color: #333; font-weight: 600; font-size: 1rem;">דף הבית</a>
-        <a href="index.html#buy" style="text-decoration: none; color: #00A896; font-weight: 700; font-size: 1rem;">רכישת הספרים</a>
-        <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 1rem; border-bottom: 2px solid #8B5A2B;">המלצות</a>
-        <a href="index.html#author" style="text-decoration: none; color: #333; font-weight: 600; font-size: 1rem;">על הסופרת</a>
-      </div>
-    </div>
-  </nav>
+  <div class="container">
+    <header>
+      <a href="index.html" class="back-home">➔ חזרה לאתר הספרים</a>
+      <h1>מהקוראים בלב פתוח</h1>
+      <p>הודעות ותגובות מרגשות שהגיעו אל הדר</p>
+    </header>
 
-  <main class="container">
-    <div class="chat-page-bg">
-      
-      <div class="chat-header">
-        <h1>מה קוראים כותבים להדר?</h1>
-        <p style="color: #667781; font-size: 0.95rem;">הודעות אמיתיות שנשלחו מקוראות נלהבות של הדואט</p>
-      </div>
+    <main class="reviews-grid">
 
-      <!-- בועה 1 -->
-      <div class="whatsapp-bubble">
-        לא חושבת שקראתי ספר כל כך רומנטי וטהור יחדיו.
-        <div class="whatsapp-meta"><span>14:22</span><span class="whatsapp-ticks">✓✓</span></div>
+      <!-- המלצה 1 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">היי הדר
+סיימתי לקרוא את כותבת מהמם.
+רואים שכתבת מהלב.
+לא ראיתי כתיבה אמיצה כזו מנקודת מבט של אישה דתיה על אהבה, קשר זוגי בתוך משפחה שחלקרה לא דתית על כל המורכבות, ושיח כנה על דת ואמונה מנקודת מבט אישית ולא תיאולוגית.
+ובעיקר, שאפו על הכתיבה הרגישה על מהותה של אהבה ללא מגע, תוך שמירה על כל כללי הצניעות.
+אז תודה 🙏</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קוראת נרגשת</span>
+          <span class="review-tag">ווטסאפ</span>
+        </div>
       </div>
 
-      <!-- בועה 2 -->
-      <div class="whatsapp-bubble">
-        לא ראיתי כתיבה אמיצה כזו מנקודת מבט של אישה דתייה על אהבה וקשר... שיח כנה על דת ואמונה מנקודת מבט אישית ולא תיאולוגית. שאפו על הכתיבה הרגישה!
-        <div class="whatsapp-meta"><span>18:05</span><span class="whatsapp-ticks">✓✓</span></div>
+      <!-- המלצה 2 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">הספר וואווו
+שקעתי בו בצורה עמוקה והוא פשוט סחף!
+הכל היה מדויק וכל הרגשות היו מומחשים כאילו אני שם איתם.
+הפרק האחרון גאוני כי תמיד מחכים לשמוע מה קורה מעבר ובעתיד..
+לא רציתי שזה ייגמר. תודה לך!!</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קוראת מהלב</span>
+          <span class="review-tag">תגובת קוראים</span>
+        </div>
       </div>
 
-      <!-- בועה 3 -->
-      <div class="whatsapp-bubble">
-        גמעתי את הספר בשקיקה! ... הספר הקודם (קרמה) חזק מאוד, אבל זה (בריסטה) מרגיש לי תופס עוד יותר! הוא סוחף, מרתק, הופך את הבטן וממלא בדמעות של אושר.
-        <div class="whatsapp-meta"><span>21:14</span><span class="whatsapp-ticks">✓✓</span></div>
+      <!-- המלצה 3 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">וואי הדר את כשרון באמת אין לי מה להגיד... אי אפשר היה לעזוב את הספר לשניה אחת.. הוא היה מושלם..
+גם בכתיבה המקצועית, גם בתוכן, כלומר הבאת את הקונפליקט הדתי-חילוני בצורה כ"כ יפה ועדינה ובעיקר קיבלתי ממנו מסר כ"כ חזק שאחדות היא סוד הקסם של העם שלנו... רומן מעלף... הרגשתי את עצמי ממש בתוך הסיטואציה... האמת חסר לי מילים! זאת ממש בשורה!! מקווה שתמשיכי להוציא עוד ספרים אני כבר מחכה לספר הבא!!!!</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קוראת מעריצה</span>
+          <span class="review-tag">ווטסאפ</span>
+        </div>
       </div>
 
-      <!-- בועה 4 -->
-      <div class="whatsapp-bubble">
-        הספר וואווו! שקעתי בו בצורה עמוקה והוא פשוט סחף! ... הפרק האחרון גאוני...
-        <div class="whatsapp-meta"><span>11:42</span><span class="whatsapp-ticks">✓✓</span></div>
+      <!-- המלצה 4 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">גמעתי את הספר בשקיקה השבת וסיימתי אותו הרגע!
+כמו שאת מבינה- לא יכולתי להיפרד ממנו כמעט. מודה שזוכרת בגדול את העלילה של הספר הקודם אבל זה מרגיש לי תופס חזק עוד יותר! הוא סוחף, מרתק, הופך את הבטן וממלא בדמעות של אושר. הזדהיתי מאוד עם הרבה מאוד ממנו ואיזה כיף לקרוא מילים שמדייקות את התחושות, המחשבות והרגשות שלנו! היא יוצרת אלופה ומגיעה לה כל התמיכה שבעולם להמשיך וליצור!
+תודה מקרב לב ❤️
+שיהיה שבוע טוב ואמן שנדע באמת לגשר על הפערים בתוך עמנו 🌸</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קוראת שבת</span>
+          <span class="review-tag">המלצה חמה</span>
+        </div>
       </div>
 
-      <!-- בועה 5 (המלצה נוספת שהייתה בצילום מסך) -->
-      <div class="whatsapp-bubble">
-        וואי הדר את כשרון באמת אין לי מה להגיד... אי אפשר היה לעזוב את הספר לשנייה אחת.. קיבלתי ממנו מסר כ"כ חזק.
-        <div class="whatsapp-meta"><span>09:15</span><span class="whatsapp-ticks">✓✓</span></div>
+      <!-- המלצה 5 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">זה ספר מהפכני שרלוונטי לכל יהודי ויהודיה. פשוט איחוד בעם</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קורא משפיע</span>
+          <span class="review-tag">קוראים כותבים</span>
+        </div>
       </div>
 
-      <!-- בועה 6 -->
-      <div class="whatsapp-bubble">
-        הכתיבה שלך כל כך אמיתית ופוגשת את הלב במקומות הכי רגישים. מחכה כבר לספר הבא שלך!
-        <div class="whatsapp-meta"><span>15:30</span><span class="whatsapp-ticks">✓✓</span></div>
+      <!-- המלצה 6 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">וואו״״
+בנותתתת
+ספר שלא יכלתי להוריד בשבת מהיד עד שלא סיימתי אותו בבום-
+הכי מומלץ שקראתי בעשור האחרוןןןןןן
+ממש התלהבתי עליו
+ואם מישהי יודעת מתי ספר ההמשך יצא-שתיהיה חברה ותעדכן דחוווף
+אני מזמינה ראשונה</div>
+        <div class="review-footer">
+          <span class="reviewer-name">תגובה בקבוצה</span>
+          <span class="review-tag">המלצה סוחפת</span>
+        </div>
       </div>
 
-      <!-- כאן את יכולה להמשיך להוסיף עוד ועוד בועות וואטסאפ של המלצות שקיבלת בעבר -->
+      <!-- המלצה 7 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">כל רגע פנוי תפסתי אותו, ועכשיו גמעתי אותו!!
+הצלחת להכניס אותו לגמרי לחווית הזוגיות המרתקת הזו, לא מבינה איפה היית עד היום אבל את לגמרי בשליחות שלך!!
+הכתיבה שלך מרתקת ופשוטה ומקרבת ומפולפלת
+כל הספר אני קוראת ואומרת, אין מצב שזה הספר הראשון שלה.
+את מוכשרת אחותי!
+הזכרת לי לרגעים את כתיבתו של שווארמה (כינוי של רובין שארמה)</div>
+        <div class="review-footer">
+          <span class="reviewer-name">חברה קוראת</span>
+          <span class="review-tag">פרגון חם</span>
+        </div>
+      </div>
 
-    </div>
+      <!-- המלצה 8 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">הסיפור של מפגש הדמויות סיקרן אותי אותי והן נכנסו לי לנשמה. סיפור מדהים על עולמות ונשמות שנפגשות ובונות עולם משלהן, שבו יש מקום לכל אחד באשר הוא. אהבתי, מחכה בשקיקה להמשך.... ❤️</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קוראת נשמה</span>
+          <span class="review-tag">ביקורת ספר</span>
+        </div>
+      </div>
 
-    <div class="back-btn-wrap">
-      <a class="btn primary" href="index.html" style="background-color: #8B5A2B; color: white;">חזרה לדף הבית ותקציר הספרים</a>
-    </div>
-  </main>
+      <!-- המלצה 9 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">הדר יקרה שבוע טוב.
+השבת סוף סוף הייתי בפניות לקרוא את הספר. התחלתי בשש בבוקר וסיימתי ב11.
+לא יכולתי להניח אותו מידיי... מדהימסססססם</div>
+        <div class="review-footer">
+          <span class="reviewer-name">קריאת מרתון</span>
+          <span class="review-tag">ווטסאפ אישי</span>
+        </div>
+      </div>
 
-  <footer class="footer" style="margin-top: 60px;">
-    <div class="container footer-inner">
-      <strong>קְרֵמָה - בָּריסטה | הדואט מאת הדר סופר</strong>
-    </div>
-  </footer>
+      <!-- המלצה 10 -->
+      <div class="review-card">
+        <div class="quote-icon">”</div>
+        <div class="review-text">חייבת לשתף.. 👆
+לא הספקתי לקנות לי בגד לחג אז החלטתי לפרגן לעצמי ולקנות לי את הספר של הדר..
+ו...
+מהרגע שהתחלתי לקרוא לא הצלחתי להתנתק !!!
+אתן חייבות לקרוא!!
+פשוט ספר מהממם.... 🫶</div>
+        <div class="review-footer">
+          <span class="reviewer-name">פרגון לחג</span>
+          <span class="review-tag">שיתוף בקבוצה</span>
+        </div>
+      </div>
+
+    </main>
+  </div>
 
 </body>
 </html>
