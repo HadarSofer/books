@@ -86,8 +86,8 @@
       </div>
     </section>
 
-    <section class="section reviews" id="reviews">
-      <div class="container visible" style="opacity: 1; transform: none;">
+<section class="section reviews" id="reviews">
+      <div class="container">
         <p class="eyebrow" style="text-align: center;">חוות דעת</p>
         <h2 style="text-align: center; margin-bottom: 40px;">מה כתבו על הדואט</h2>
         
@@ -104,21 +104,21 @@
         </div>
 
         <div class="carousel-wrapper">
-          <div class="carousel-arrow" style="font-weight: bold; font-size: 2rem; color: var(--coffee); padding: 0 10px;">&#10094;</div>
+          <button class="carousel-arrow carousel-arrow-left" onclick="moveCarousel(-1)">&#10094;</button>
           <div class="carousel-container" style="background: #ffffff; border: 2px solid var(--latte);">
-            <div class="carousel-track">
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600;">“הספר וואווו! שקעתי בו בצורה עמוקה והוא פשוט סחף! ... הפרק האחרון גאוני...”</p>
+            <div class="carousel-track" id="carouselTrack" style="display: flex; width: 300%; transition: transform 0.4s ease-in-out;">
+              <div class="carousel-slide" style="width: 33.333%; flex: shrink 0;">
+                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“הספר וואווו! שקעתי בו בצורה עמוקה והוא פשוט סחף! ... הפרק האחרון גאוני...”</p>
               </div>
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600;">“וואי הדר את כשרון באמת אין לי מה להגיד... אי אפשר היה לעזוב את הספר לשנייה אחת.. קיבלתי ממנו מסר כ"כ חזק.”</p>
+              <div class="carousel-slide" style="width: 33.333%; flex: shrink 0;">
+                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“וואי הדר את כשרון באמת אין לי מה להגיד... אי אפשר היה לעזוב את הספר לשנייה אחת.. קיבלתי ממנו מסר כ"כ חזק.”</p>
               </div>
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600;">“הכתיבה שלך כל כך אמיתית ופוגשת את הלב במקומות הכי רגישים. מחכה כבר לספר הבא שלך!”</p>
+              <div class="carousel-slide" style="width: 33.333%; flex: shrink 0;">
+                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“הכתיבה שלך כל כך אמיתית ופוגשת את הלב במקומות הכי רגישים. מחכה כבר לספר הבא שלך!”</p>
               </div>
             </div>
           </div>
-          <div class="carousel-arrow" style="font-weight: bold; font-size: 2rem; color: var(--coffee); padding: 0 10px;">&#10095;</div>
+          <button class="carousel-arrow carousel-arrow-right" onclick="moveCarousel(1)">&#10095;</button>
         </div>
       </div>
     </section>
