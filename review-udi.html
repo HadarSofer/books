@@ -3,230 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>אהבה ואחווה בגבולות גזרה | סקירה על הספר "קרמה"</title>
+  <title>אהבה ואחווה בגבולות גזרה | סקירה מאת אודי בן חמו</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Secular+One&family=David+Libre:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
-    /* עיצוב כללי ומבנה */
     body {
       font-family: 'Assistant', sans-serif;
       background-color: #f5efe6;
       color: #2b2b2b;
       margin: 0;
       padding: 0;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    /* תפריט ניווט עליון עקבי */
+    /* תפריט ניווט קבוע בעיצוב זהה לדף הראשי */
     .main-nav {
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       z-index: 1000;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+      padding: 12px 0;
     }
 
-    .main-nav a {
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #6f4e37;
+    }
+
+    .nav-links a {
+      color: #2b2b2b;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-right: 15px;
+    }
+
+    /* מיכל העיתון הראשי */
+    .newspaper-frame {
+      max-width: 1050px;
+      margin: 90px auto 40px auto;
+      background: #ffffff;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid #dcd1c4;
+    }
+
+    /* לוגו עיתון עולם קטן עליון */
+    .newspaper-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #2b2b2b;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+
+    .sub-brand-box {
+      background-color: #e05e5e;
+      color: white;
+      padding: 8px 15px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .sub-brand-box span {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      border-top: 1px solid rgba(255,255,255,0.4);
+      margin-top: 3px;
+    }
+
+    .issue-meta {
+      text-align: left;
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: bold;
+    }
+
+    /* כותרת מאמר */
+    .article-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .article-header h1 {
+      font-family: 'Secular One', sans-serif;
+      font-size: 3.2rem;
+      color: #1a0f0d;
+      margin: 0 0 5px 0;
+      line-height: 1.1;
+    }
+    
+    .article-header .sub-title {
+      font-size: 1.4rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .article-header .author-line {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #6f4e37;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      display: inline-block;
+      padding: 5px 30px;
+      margin-top: 5px;
+    }
+
+    /* מבנה 3 טורים כמו בתמונה */
+    .grid-3-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 25px;
+      text-align: justify;
+      font-size: 1.05rem;
+      color: #222;
+    }
+
+    .grid-3-columns p {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    /* הדגשות מיוחדות של פסקאות מפתח המופיעות בבולד בתמונה */
+    .highlight-para {
+      font-weight: 700;
+      color: #000;
+    }
+
+    /* תמונת הספר המשולבת בטור השמאלי */
+    .embedded-book-img {
+      width: 100%;
+      max-width: 180px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 4px;
+    }
+
+    /* תחתית הכתבה - הברקודים והנעה לפעולה בעיצוב המדויק מהתמונה */
+    .newspaper-footer-zone {
+      margin-top: 40px;
+      border-top: 3px solid #2b2b2b;
+      padding-top: 25px;
+    }
+
+    .bottom-promo-text {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #00a896; /* הצבע הטורקיז מהתמונה */
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .footer-action-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .right-info {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2b2b2b;
+    }
+    .right-info a {
       color: #6f4e37;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.2s;
     }
 
-    .main-nav a:hover {
-      color: #b38867;
-    }
-
-    /* מיכל העיתון */
-    .newspaper-container {
-      max-width: 900px;
-      margin: 120px auto 60px auto;
-      padding: 50px;
-      background-color: #ffffff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      border: 1px solid #e6dfd5;
-    }
-
-    /* כותרות בסגנון עיתון עולם קטן */
-    .newspaper-header {
-      text-align: center;
-      border-bottom: 3px double #3e2723;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
-    }
-
-    .section-tag {
-      font-family: 'Secular One', sans-serif;
-      color: #b38867;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    h1 {
-      font-family: 'Secular One', sans-serif;
-      font-size: 3rem;
-      color: #1a0f0d;
-      margin: 0 0 10px 0;
-      line-height: 1.2;
-    }
-
-    .newspaper-author {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #555555;
-    }
-
-    /* ציטוט פתיחה בולט */
-    .intro-quote {
-      font-style: italic;
-      background-color: #faf6f0;
-      border-right: 4px solid #6f4e37;
-      padding: 20px;
-      margin-bottom: 30px;
-      font-size: 1.2rem;
-      color: #4e3629;
-    }
-
-    /* חלוקה לטורים כמו בעיתון */
-    .newspaper-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      text-align: justify;
-      font-size: 1.15rem;
-    }
-
-    .newspaper-body p {
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-indent: 20px;
-    }
-
-    /* כפתורי פעולה בתחתית */
-    .action-zone {
-      margin-top: 50px;
-      border-top: 1px solid #e6dfd5;
-      padding-top: 30px;
-      text-align: center;
+    .qr-placeholder-box {
       display: flex;
-      flex-direction: column;
       align-items: center;
       gap: 15px;
+      background: #faf6f0;
+      padding: 10px 20px;
+      border-radius: 12px;
+      border: 1px solid #e2d1c3;
     }
 
-    .buy-now-btn {
-      display: inline-block;
-      padding: 15px 40px;
-      background-color: #6f4e37;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 1.2rem;
+    .qr-mock {
+      width: 65px;
+      height: 65px;
+      background: #333;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-align: center;
       font-weight: bold;
-      transition: all 0.3s;
-      box-shadow: 0 4px 10px rgba(111, 78, 55, 0.2);
     }
 
-    .buy-now-btn:hover {
-      background-color: #553c2a;
+    .buy-link-btn {
+      display: inline-block;
+      background-color: #6f4e37;
+      color: white !important;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .buy-link-btn:hover {
       transform: translateY(-2px);
     }
 
-    .back-btn {
-      color: #888888;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-
-    .back-btn:hover {
-      color: #333333;
-    }
-
-    /* התאמה למובייל - מעבר לטור אחד */
-    @media (max-width: 768px) {
-      .main-nav {
-        padding: 10px;
-        gap: 15px;
-      }
-      .main-nav a {
-        font-size: 0.95rem;
-      }
-      .newspaper-container {
-        margin: 90px 15px 30px 15px;
-        padding: 20px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      .newspaper-body {
+    /* התאמה למובייל - הופך לטור אחד קריא */
+    @media (max-width: 850px) {
+      .grid-3-columns {
         grid-template-columns: 1fr;
-        gap: 0;
         text-align: right;
       }
-      .newspaper-body p {
-        text-indent: 0;
+      .newspaper-frame {
+        margin: 80px 10px 20px 10px;
+        padding: 20px;
+      }
+      .article-header h1 {
+        font-size: 2.2rem;
+      }
+      .footer-action-grid {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- תפריט ניווט עליון שיופיע גם כאן -->
+  <!-- נבאר עליון אחיד לאתר -->
   <nav class="main-nav">
-    <a href="index.html">דף הבית</a>
-    <a href="index.html#books-section">הספרים שלי</a>
-    <a href="reviews.html">המלצות וביקורות</a>
+    <div class="nav-container">
+      <div class="nav-logo">הדר סופר | אתר הסופרת</div>
+      <div class="nav-links">
+        <a href="index.html#buy">רכישת הספרים</a>
+        <a href="index.html#reviews">המלצות</a>
+        <a href="index.html#author">על הסופרת</a>
+      </div>
+    </div>
   </nav>
 
-  <div class="newspaper-container">
-    <header class="newspaper-header">
-      <span class="section-tag">מי שקורא יודע // טור ביקורת ספרים</span>
-      <h1>אהבה ואחווה בגבולות גזרה</h1>
-      <div class="newspaper-author">אודי בן חמו, 'סוללים דרך' // על הספר "קרמה"</div>
+  <!-- דף העיתון המעוצב -->
+  <div class="newspaper-frame">
+    
+    <div class="newspaper-top-bar">
+      <div class="sub-brand-box">
+        מי שקורא יודע
+        <span>טור ביקורת ספרים</span>
+      </div>
+      <div class="issue-meta">
+        מדור ספרות ותרבות // עולם קטן
+      </div>
+    </div>
+
+    <header class="article-header">
+      <h1>אהבה ואחווה<br>בגבולות גזרה</h1>
+      <div class="sub-title">'קרמה'</div>
+      <div class="author-line">אודי בן חמו, 'סוללים דרך'</div>
     </header>
 
-    <div class="intro-quote">
-      "כשמכינים קפה, המים עוברים דרך פולי הקפה ואוספים מהם את השמנים ואז נוצרת שכבת הקצף – לשכבה הזו קוראים קְרֵמָה. אז איזה חלק אני בכל הסיפור?.. נראה לי ששנינו הכל. שנינו המים ששטפו זה מזה את המיותר ואספו את השמנים הטובים שמאפשרים להתחיל בהכנת הקפה. יחד נרקמת יצירה חדשה בפני עצמה.. ותרשה לי להוסיף שהקצף הזה שנוצר הוא יפה ושברירי ונצטרך לשמור עליו טוב טוב".[cite: 1]
+    <div class="grid-3-columns">
+      
+      <!-- טור ראשון (ימין) -->
+      <div class="column">
+        <p>"כשמכינים קפה, המים עוברים דרך פולי הקפה ואוספים מהם את השמנים ואז נוצרת שכבת הקצף – לשכבה הזו קוראים קְרֵמָה. אז איזה חלק אני בכל הסיפור?.. נראה לי ששנינו הכל. שנינו המים ששטפו זה מזה את המיותר ואספו את השמנים הטובים שמאפשרים להתחיל בהכנת הקפה. יחד נרקמת יצירה חדשה בפני עצמה.. ותרשה לי להוסיף שהקצף הזה שנוצר הוא יפה ושברירי ונצטרך לשמור עליו טוב טוב."</p>
+        <p>הימים שאחרי ימי בין המצרים ולקראת תחילת שנת לימודים חדשה הינם זמנים מתאימים לעסוק בשאלות של אמת ושלום הנמצאים בקונפליקט מתמשך ומחייבים בירור רציני ולא שטחי.</p>
+        <p>אין צורך לעסוק בנושא הזה בדופק גבוה ובלחץ תחת איומי אקדח. דרוש עיסוק בגבולות השיח וכיצד ניתן לחבר בין שלום מצד אחד לבין חתירה לאמת מצד שני.</p>
+        <p>הבסיס ההכרחי כמובן לדיון הזה הוא כבוד הדדי ויחס ראוי האחד לשני, לב פתוח ושיח אמיתי.</p>
+        <p>מהם הגבולות בדיוק? שאלה טובה. לכך נדרש טיפול רציני נטול מניפולציות רגשיות, לאחר ניקוי עבדות מנטאלית, תוך הנחת תשתית מוסרית ואינטלקטואלית רחבה ועוד.</p>
+        <p>בכל מקרה ניכר שאי אפשר לבטל את הצורך בעיסוק הזה משום שהוא יושב על יסודות חשובים בחיינו.</p>
+        <p>הספר קרמה נכתב על ידי הדר סופר, חוזרת בתשובה, אמא לשמונה ילדים. סופר היא הייטיקיסטית וכתיבתה נובעת מתוך עולמה האמיתי.</p>
+        <p>הספר הינו רומן עלילתי הכתוב באופן חופשי, זורם ומלא נגיעות הומוריסטיות והוא יכול להיות בסיס טוב לדיון עם בני נוער ואף מבוגרים על מהו החיבור הראוי בין חלקי העם השונים המתווכחים בלהט על מציאות חיינו המשותפת.</p>
+        <p>העלילה עוסקת במפגש בין שני טיפוסים שונים לחלוטין המייצגים סטריאוטיפים הנמצאים בקצוות לעיתים של עם ישראל.</p>
+        <p>"הילה היא בחורה דתייה, עדינה ודעתנית מיישוב בשומרון, יאיר לעומתה הוא גרוש חילוני, תל אביבי, מקועקע וחסר מעצורים". כך כותבת המחברת בכריכת הספר האחורית.</p>
+        <p>שתי הדמויות הללו נפגשות בבית אבות בו מתנדבת הילה כאשר יאיר הדואג לבנו הקטן מביא אותו למפגש אנושי עם הדיירים במקום.</p>
+      </div>
+
+      <!-- טור שני (אמצע) -->
+      <div class="column">
+        <p class="highlight-para">המפגש הראשוני מלא בעוקצנות, התעלמות, דעות קדומות ואף זלזול. לאט לאט נוצר מפגש מלא חמלה, הקשבה, רוך ואף חתירה לעבר יעד משותף המתמקד בסיוע לבנו הצעיר של יאיר תוך התהלכות לעיתים על חבל דק ולעיתים על קרקע מוצקה ויציבה יותר.</p>
+        <p>שניהם יוצאים למסע מותח רווי קשיים הנתון בתוך 'דדליין' שלא ניתן לדלג מעליו. המטרה המשותפת גדולה משניהם ומחייבת אותם להתמודד עם וויכוחים המשקפים את ראיית המציאות השונה שלהם וגם להתמודד עם פחדים וכאב רב.</p>
+        <p>הילה לא מוותרת על עולמה הרוחני ולא מתכופפת. דמותה מתוארת כמלאת ביטחון עצמי בזהותה היהודית מחד, ומאידך בעלת יכולת לנהל שיח מורכב עם מי שחי וחושב ההיפך ממנה. האם כל הבחירות של הילה כאשה דתייה המתוארות בספר הינן מדויקות? האם המפגש עם אדם בעל תפיסת עולם כה שונה משלה נתון במסגרת הנכונה? האם נכון יותר להימנע ממפגש שכזה לחלוטין? או שמא זה בלתי אפשרי? כל אלו שאלות חשובות ומעוררות מחשבה שהספר מציף.</p>
+        <p class="highlight-para">על שאלות שכאלו ראויים לדיון גדולים ורציניים, אך ייתכן וכל עוד ישנה מציאות שכזו ממנה אי אפשר להימנע לאור חיינו המשותפים באופן תדיר מפגשים משותפים, הדיון בבחירות לאורך הספר הוא חשוב ובמקום לגמרי.</p>
+        <p>הספר פותח בתיאור חי ומלא רגש המתאר את חיי הרווקות של גיבורת הספר ואת האופן בו חֵבְרַה שלמה, קרובה ורחוקה, לעיתים מתנהלת בחוסר רגישות. הברכה "בקרוב אצלך" יכולה הרי להישמע בכל מיני אינטונציות ולא בטוח שראוי לשלוף אותה על אוטומט ללא מחשבה מקדימה כיצד הדבר מתקבל אצל השומע או השומעת הספציפיים. לעיתים מדובר בברכה, לעיתים כזריית מלח על פצע פתוח.</p>
+        <p class="highlight-para">הסיטואציה הזו מתארת את המציאות המורכבת שלא מאפשרת פתרון זול של 'העתק הדבק' ללא הקשבה אמיתית לעולמו המיוחד של האדם. כל אדם.</p>
+        <p>סיפור הרקע של הספר והMפגש הראשוני כאמור הוא התנדבות בבית אבות וכך יוצא שדמויות רבות ומגוונות בגילאים שונים ורחוקים נפגשים במקום אחד המחייב את כולם לגלות רגישות, התעניינות וסיוע למי שכחברה אנו אמורים לשאת אליהם עיניים – הזקנים.</p>
+        <p>המחברת מאירה זוויות אנושיות רבות במפגש הזה וחושפת עבור הקוראים את הצורך להתעלות מעל החיצוני, הגלוי ומה שמעל לפני השטח ולהקשיב ללב. וגם לראש כמובן.</p>
+      </div>
+
+      <!-- טור שלישי (שמאל) -->
+      <div class="column">
+        <p>ההתנהלות בחורים ומטרה משותפת נהירה, קל יותר להתנהל בחופשיות מבלי לדרוך על אצבעות הרגליים ולדחוק האחד את השני.</p>
+        <p>בהמשך הספר כשנוצר מפגש בין הילה ליאיר המנסים לברר את מטרות הבית המשותף הפוטנציאלי של שניהם, כללי ההתנהלות וגבולותיו הערכיים, מסתבר שהדבר מורכב הרבה יותר. הוא כלל לא פשוט אבל הוא לא נתון לכישלון מראש.</p>
+        <p>נקודה למחשבה.</p>
+        <p>במציאות חיינו הלאומית כאשר השיח על חיבור ואחדות מנוצל לא פעם על ידי ציניקנים המבקשים להכריע באלימות ולא לקבל את כללי המשחק הדמוקרטיים, הספר הזה יכול לשמש מצע נהדר לשאלות רבות העולות שוב ושוב.</p>
+        <p>כמו תמיד, אחווה ואהבה הנתונים בגבולות גזרה ברורים עם קווים אדומים הכרחיים, עליהם גם כן יש לדבר, יאפשרו לכל תוכן נפלא לשהות בכלים ולא לזלוג החוצה ולאבד את הכל.</p>
+        <p>אם אתם אנשי חינוך הספר הזה יכול להיות מצע נהדר לשיח עם תלמידים. חכם, רגיש, עדין, מציף שאלות חשובות ומהווה פתח למחשבות רבות.</p>
+        <p>לסיום, הנושא צריך להיבחן עניינית כמובן, אך לעיתים, ראייתם המפוכחת של חוזרים בתשובה, המכירים את שני העולמות באופן אינטימי יכולה ללמד אותנו רבות על כל מיני אתגרים בחיינו ולשפוך עליהם אור. ללא עיגולי פינות וללא הנחות. בלי עיניים מגולגלות לשמיים מצד אחד ומצד שני ללא אש וגופרית מהאוזניים.</p>
+        
+        <!-- שילוב תמונת כריכת הספר כחלק מהטור השמאלי -->
+        <img src="images/Cover_Crema.jpg" alt="כריכת הספר קרמה" class="embedded-book-img">
+      </div>
+
     </div>
 
-    <div class="newspaper-body">
-      <div class="column">
-        <p>הימים שאחרי ימי בין המצרים ולקראת תחילת שנת לימודים חדשה הינם זמנים מתאימים לעסוק בשאלות של אמת ושלום הנמצאים בקונפליקט מתמשך ומחייבים בירור רציני ולא שטחי.[cite: 1]</p>
-        <p>אין צורך לעסוק בנושא הזה בדופק גבוה ובלחץ תחת איומי אקדח. דרוש עיסוק בגבולות השיח וכיצד ניתן לחבר בין שלום מצד אחד לבין חתירה לאמת מצד שני.[cite: 1] הבסיס ההכרחי כמובן לדיון הזה הוא כבוד הדדי ויחס ראוי האחד לשני, לב פתוח ושיח אמיתי.[cite: 1]</p>
-        <p>מהם הגבולות בדיוק? שאלה טובה. לכך נדרש טיפול רציני נטול מניפולציות רגשיות, לאחר ניקוי עבדות מנטאלית, תוך הנחת תשתית מוסרית ואינטלקטואלית רחבה ועוד. בכל מקרה ניכר שאי אפשר לבטל את הצורך בעיסוק הזה משום שהוא יושב על יסודות חשובים בחיינו.[cite: 1]</p>
-        <p>הספר קרמה נכתב על ידי הדר סופר, חוזרת בתשובה, אמא לשמונה ילדים. סופר היא הייטיקיסטית וכתיבתה נובעת מתוך עולמה האמיתי.[cite: 1] הספר הינו רומן עלילתי הכתוב באופן חופשי, זורם ומלא נגיעות הומוריסטיות והוא יכול להיות בסיס טוב לדיון עם בני נוער ואף מבוגרים על מהו החיבור הראוי בין חלקי העם השונים המתווכחים בלהט על מציאות חיינו המשותפת.[cite: 1]</p>
-        <p>העלילה עוסקת במפגש בין שני טיפוסים שונים לחלוטין המייצגים סטריאוטיפים הנמצאים בקצוות לעיתים של עם ישראל.[cite: 1] "הילה היא בחורה דתייה, עדינה ודעתנית מיישוב בשומרון, יאיר לעומתה הוא גרוש חילוני, תל אביבי, מקועקע וחסר מעצורים". כך כותבת המחברת בכריכת הספר האחורית.[cite: 1]</p>
-        <p>שתי הדמויות הללו נפגשות בבית אבות בו מתנדבת הילה כאשר יאיר הדואג לבנו הקטן מביא אותו למפגש אנושי עם הדיירים במקום.[cite: 1] המפגש הראשוני מלא בעוקצנות, התעלמות, דעות קדומות ואף זלזול. לאט לאט נוצר מפגש מלא חמלה, הקשבה, רוך ואף חתירה לעבר יעד משותף המתמקד בסיוע לבנו הצעיר של יאיר תוך התהלכות לעיתים על חבל דק ולעיתים על קרקע מוצקה ויציבה יותר.[cite: 1]</p>
+    <!-- אזור ההנעה לפעולה התחתון בעיצוב המדויק מהתמונה -->
+    <footer class="newspaper-footer-zone">
+      <div class="bottom-promo-text">
+        הספר הינו רומן עלילתי הכתוב באופן חופשי, זורם ומלא נגיעות הומוריסטיות והוא יכול להיות בסיס טוב לדיון עם בני נוער ואף מבוגרים על מהו החיבור הראוי בין חלקי העם השונים המתווכחים בלהט על מציאות חיינו המשותפת.
       </div>
       
-      <div class="column">
-        <p>שניהם יוצאים למסע מותח רווי קשיים הנתון בתוך 'דדליין' שלא ניתן לדלג מעליו. המטרה המשותפת גדולה משניהם ומחייבת אותם להתמודד עם וויכוחים המשקפים את ראיית המציאות השונה שלהם וגם להתמודד עם פחדים וכאב רב.[cite: 1]</p>
-        <p>הילה לא מוותרת על עולמה הרוחני ולא מתכופפת. דמותה מתוארת כמלאת ביטחון עצמי בזהותה היהודית מחד, ומאידך בעלת יכולת לנהל שיח מורכב עם מי שחי וחושב ההיפך ממנה. האם כל הבחירות של הילה כאשה דתייה המתוארות בספר הינן מדויקות? האם המפגש עם אדם בעל תפיסת עולם כה שונה משלה נתון במסגרת הנכונה? האם נכון יותר להימנע ממפגש שכזה לחלוטין? או שמא זה בלתי אפשרי? כל אלו שאלות חשובות ומעוררות מחשבה שהספר מציף.[cite: 1]</p>
-        <p>הספר פותח בתיאור חי ומלא רגש המתאר את חיי הרווקות של גיבורת הספר ואת האופן בו חֵבְרַה שלמה, קרובה ורחוקה, לעיתים מתנהלת בחוסר רגישות. הברכה "בקרוב אצלך" יכולה הרי להישמע בכל מיני אינטונציות ולא בטוח שראוי לשלוף אותה על אוטומט ללא מחשבה מקדימה כיצד הדבר מתקבל אצל השומע או השומעת הספציפיים. לעיתים מדובר בברכה, לעיתים כזריית מלח על פצע פתוח. הסיטואציה הזו מתארת את המציאות המורכבת שלא מאפשרת פתרון זול של 'העתק הדבק' ללא הקשבה אמיתית לעולמו המיוחד של האדם. כל אדם.[cite: 1]</p>
-        <p>סיפור הרקע של הספר והמפגש הראשוני כאמור הוא התנדבות בבית אבות וכך יוצא שדמויות רבות ומגוונות בגילאים שונים ורחוקים נפגשים במקום אחד המחייב את כולם לגלות רגישות, התעניינות וסיוע למי שכחברה אנו אמורים לשאת אליהם עיניים – הזקנים.[cite: 1] המחברת מאירה זוויות אנושיות רבות במפגש הזה וחושפת עבור הקוראים את הצורך להתעלות מעל החיצוני, הגלוי ומה שמעל לפני השטח ולהקשיב ללב. וגם לראש כמובן.[cite: 1]</p>
-        <p>במציאות חיינו הלאומית כאשר השיח על חיבור ואחדות מנוצל לא פעם על ידי ציניקנים המבקשים להכריע באלימות ולא לקבל את כללי המשחק הדמוקרטיים, הספר הזה יכול לשמש מצע נהדר לשאלות רבות העולות שוב ושוב.[cite: 1] כמו תמיד, אחווה ואהבה הנתונים בגבולות גזרה ברורים עם קווים אדומים הכרחיים, עליהם גם כן יש לדבר, יאפשרו לכל תוכן נפלא לשהות בכלים ולא לזלוג החוצה ולאבד את הכל.[cite: 1]</p>
-        <p>אם אתם אנשי חינוך הספר הזה יכול להיות מצע נהדר לשיח עם תלמידים. חכם, רגיש, עדין, מציף שאלות חשובות ומהווה פתח למחשבות רבות.[cite: 1]</p>
-        <p>לסיום, הנושא צריך להיבחן עניינית כמובן, אך לעיתים, ראייתם המפוכחת של חוזרים בתשובה, המכירים את שני העולמות באופן אינטימי יכולה ללמד אותנו רבות על כל מיני אתגרים בחיינו ולשפוך עליהם אור. ללא עיגולי פינות וללא הנחות.[cite: 1]</p>
-      </div>
-    </div>
+      <div class="footer-action-grid">
+        <div class="right-info">
+          להזמנת הספר סרקו את הברקוד<br>
+          או צרו קשר עם הסופרת<br>
+          <span style="font-size: 1.3rem; letter-spacing: 1px; color: #1a0f0d;">054-4828954</span><br>
+          <small style="color: #666; font-weight: normal;">זמין לרכישה גם בדברי שיר וב-BookPod</small>
+        </div>
 
-    <div class="action-zone">
-      <!-- הפנייה ישירה לחלק הפירוט של הספרים והכריכות בדף הראשי -->
-      <a href="index.html#books-section" class="buy-now-btn">אהבתם? לפרטים ורכישת הספרים לחצו כאן ←</a>
-      <a href="index.html" class="back-btn">חזרה לדף הבית הראשי</a>
-    </div>
+        <div class="qr-placeholder-box">
+          <div class="qr-mock">סריקה<br>לרכישה</div>
+          <a href="index.html#buy" class="buy-link-btn">מעבר לרכישה ישירה באתר ←</a>
+        </div>
+      </div>
+    </footer>
+
   </div>
 
 </body>
