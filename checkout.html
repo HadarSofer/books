@@ -1,244 +1,108 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>רכישת ספרי הדר סופר | קנייה מאובטחת</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>רכישת הספרים | דואט קרמה ובריסטה מאת הדר סופר</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Secular+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --espresso: #1a0f0d;
-      --coffee: #6f4e37;
-      --latte: #e9d6bd;
-      --cream: #faf6f0;
-      --shadow: 0 4px 15px rgba(0,0,0,0.05);
+      --cream: #fbf4e8;
+      --coffee: #5a321d;
+      --espresso: #2a160c;
+      --caramel: #b77945;
+      --white: #fffdf8;
+      --shadow: 0 24px 70px rgba(65,35,17,.18);
     }
-
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Assistant', sans-serif;
-      background-color: var(--cream);
-      color: var(--espresso);
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-
-    .checkout-nav {
-      background: #ffffff;
-      padding: 15px 0;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .checkout-nav a {
-      color: var(--coffee);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .checkout-container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: 'Secular One', sans-serif;
-      font-size: 2.5rem;
+      font-family: 'Assistant', Arial, sans-serif;
+      background: var(--cream);
       color: var(--espresso);
-      margin-bottom: 10px;
+      line-height: 1.75;
+      font-size: 18px;
     }
-
-    .subtitle {
-      font-size: 1.2rem;
-      color: var(--coffee);
-      margin-bottom: 40px;
-    }
-
-    /* מבנה כרטיסיות הרכישה */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .price-card {
-      background: #ffffff;
-      border: 1px solid var(--latte);
-      border-radius: 24px;
-      padding: 35px 25px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(111, 78, 55, 0.15);
-    }
-
-    .price-card.featured {
-      border: 2.5px solid var(--coffee);
-      background: #fffdfa;
-    }
-
-    .badge {
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--coffee);
-      color: white;
-      padding: 5px 20px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: bold;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
+    .container { width: min(1120px, 92vw); margin: auto; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 28px;
+      border-radius: 999px;
       font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .price-tag {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--coffee);
-      margin-bottom: 20px;
-    }
-
-    .price-tag span {
-      font-size: 1rem;
-      font-weight: normal;
-      color: #666;
-    }
-
-    .features-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 30px 0;
-      text-align: right;
-    }
-
-    .features-list li {
-      margin-bottom: 12px;
-      font-size: 1.05rem;
-      position: relative;
-      padding-right: 25px;
-    }
-
-    .features-list li::before {
-      content: "✓";
-      position: absolute;
-      right: 0;
-      color: var(--coffee);
-      font-weight: bold;
-    }
-
-    .order-btn {
-      display: block;
-      background: var(--coffee);
-      color: white;
       text-decoration: none;
-      padding: 14px;
-      border-radius: 15px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: background 0.2s;
+      box-shadow: 0 12px 30px rgba(80,40,20,.12);
+      transition: .25s;
+      width: 100%;
     }
-
-    .order-btn:hover {
-      background: var(--espresso);
-    }
-
-    .contact-footer {
-      margin-top: 50px;
-      border-top: 1px solid var(--latte);
-      padding-top: 30px;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    .btn:hover { transform: translateY(-3px); }
   </style>
 </head>
 <body>
 
-  <nav class="checkout-nav">
-    <a href="index.html">← חזרה לאתר הראשי</a>
-  </nav>
-
-  <div class="checkout-container">
-    <h1>בחרו את אפשרות הרכישה המועדפת עליכם</h1>
-    <div class="subtitle">הצטרפו למסע מרתק בין שני עולמות</div>
-
-    <div class="pricing-grid">
+  <main style="background: #5a321d; min-height: 100vh; padding: 60px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="container" style="text-align: center;">
       
-      <!-- אפשרות 1 -->
-      <div class="price-card">
-        <div>
-          <div class="card-title">הספר "קרמה"</div>
-          <div class="price-tag">₪74 <span>+ משלוח</span></div>
-          <ul class="features-list">
-            <li>עותק פיזי מודפס ואיכותי</li>
-            <li>הקדשה אישית חמה מהסופרת</li>
-            <li>משלוח מהיר לכל חלקי הארץ</li>
-          </ul>
-        </div>
-        <a href="https://wa.me/972544828954?text=שלום%20הדר,%20אשמח%20לרכוש%20עותק%20של%20הספר%20קרמה" target="_blank" class="order-btn">רכישה בוואטסאפ ←</a>
+      <div style="margin-bottom: 25px;">
+        <a href="index.html" style="color: #fffdf8; opacity: 0.8; font-weight: 700; text-decoration: none; font-size: 0.95rem;">← חזרה לאתר הראשי</a>
       </div>
 
-      <!-- אפשרות 2 - מודגשת -->
-      <div class="price-card featured">
-        <div class="badge">החבילה המשתלמת לקוראים</div>
-        <div>
-          <div class="card-title">צמד הספרים: קרמה & בריסטה</div>
-          <div class="price-tag">₪130 <span>חלף ₪148</span></div>
-          <ul class="features-list">
-            <li>עותקים מודפסים של "קרמה" וספר ההמשך "בריסטה"</li>
-            <li>הקדשה אישית חתומה בשני הספרים</li>
-            <li>סימניות מעוצבות ייחודיות במתנה</li>
-            <li>הטבה מיוחדת לרכישת הדואט המלא</li>
-          </ul>
+      <h2 style="color: white; font-size: clamp(22px, 4vw, 26px); font-weight: 700; margin-bottom: 40px; margin-top: 0;">בחרו את הספר או הדואט המלא והתחילו במסע.</h2>
+      
+      <div class="purchase-grid" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; max-width: 1000px; margin: 0 auto; direction: rtl;">
+        
+        <!-- כרטיס 1: קרמה -->
+        <div class="purchase-card" style="background: #ffffff; border-radius: 32px; padding: 35px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); flex: 1; min-width: 260px; max-width: 290px;">
+          <img src="images/Cover_Crema.jpg" alt="כריכת הספר קרמה" style="height: 200px; object-fit: contain; margin-bottom: 20px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" />
+          <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 15px 0; color: #2a160c;">הספר 'קרמה'</h4>
+          <p style="font-size: 1rem; color: #6d594d; margin: 0 0 25px 0; line-height: 1.6;">
+            מחיר מלא: <span style="text-decoration: line-through; opacity: 0.6;">98 ₪</span> <br>
+            <span style="font-size: 1.3rem; font-weight: 800; color: #2a160c; display: inline-block; margin-top: 5px;">באתר: 65 ₪</span>
+          </p>
+          <a class="btn" style="background: #b77945; color: white; box-shadow: 0 8px 20px rgba(183,121,69,0.25);" href="https://meshulam.co.il/purchase?b=f9c1762773a8a9f286a3632289c96ef9" target="_blank" rel="noopener">
+            הזמינו את קרמה
+          </a>
         </div>
-        <a href="https://wa.me/972544828954?text=שלום%20הדר,%20אשמח%20לרכוש%20את%20הדואט%20המלא%20-%20קרמה%20ובריסטה" target="_blank" class="order-btn" style="background: #00a896;">רכישת הדואט המלא בוואטסאפ ←</a>
+
+        <!-- כרטיס 2: בריסטה -->
+        <div class="purchase-card" style="background: #ffffff; border-radius: 32px; padding: 35px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); flex: 1; min-width: 260px; max-width: 290px;">
+          <img src="images/Cover_Barista.jpeg" alt="כריכת הספר בריסטה" style="height: 200px; object-fit: contain; margin-bottom: 20px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" />
+          <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 15px 0; color: #2a160c;">הספר 'בריסטה'</h4>
+          <p style="font-size: 1rem; color: #6d594d; margin: 0 0 25px 0; line-height: 1.6;">
+            מחיר מלא: <span style="text-decoration: line-through; opacity: 0.6;">98 ₪</span> <br>
+            <span style="font-size: 1.3rem; font-weight: 800; color: #2a160c; display: inline-block; margin-top: 5px;">באתר: 65 ₪</span>
+          </p>
+          <a class="btn" style="background: #4a2411; color: white; box-shadow: 0 8px 20px rgba(74,36,17,0.25);" href="https://meshulam.co.il/purchase?b=3960c1d9ae10f39e191948188ecd9db6" target="_blank" rel="noopener">
+            הזמינו את בריסטה
+          </a>
+        </div>
+
+        <!-- כרטיס 3: הדואט המלא -->
+        <div class="purchase-card" style="background: #ffffff; border-radius: 32px; padding: 35px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); flex: 1; min-width: 260px; max-width: 290px;">
+          <img src="images/book-cover.png" alt="דואט קרמה ובריסטה" style="height: 200px; object-fit: contain; margin-bottom: 20px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" />
+          <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 15px 0; color: #2a160c; line-height: 1.3;">הדואט המלא <br>(קרמה + בריסטה)</h4>
+          <p style="font-size: 1rem; color: #6d594d; margin: 0 0 25px 0; line-height: 1.6;">
+            מחיר קטלוגי: <span style="text-decoration: line-through; opacity: 0.6;">196 ₪</span> <br>
+            <span style="font-size: 1.3rem; font-weight: 800; color: #00a896; display: inline-block; margin-top: 5px;">מחיר השקה: 120 ₪</span>
+          </p>
+          <a class="btn" style="background: #00a896; color: white; box-shadow: 0 8px 20px rgba(0,168,150,0.25);" href="https://meshulam.co.il/purchase?b=cf26a15d90583e101c40a8e2467d4413" target="_blank" rel="noopener">
+            הזמינו את הדואט המלא
+          </a>
+        </div>
+
       </div>
 
-      <!-- אפשרות 3 -->
-      <div class="price-card">
-        <div>
-          <div class="card-title">הגרסה הדיגיטלית</div>
-          <div class="price-tag">₪45 <span>זמין לקריאה מיידית</span></div>
-          <ul class="features-list">
-            <li>קובץ דיגיטלי מותאם לכל סוגי המסכים</li>
-            <li>קריאה נוחה באפליקציות מובילות (BookPod)</li>
-            <li>ללא דמי משלוח וזמין מיד בנייד או בטאבלט</li>
-          </ul>
-        </div>
-        <a href="https://wa.me/972544828954?text=שלום%20הדר,%20אשמח%20לרכוש%20עותק%20דיגיטלי%20של%20הספר" target="_blank" class="order-btn">רכישה דיגיטלית ←</a>
+      <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.15); max-width: 600px; margin: 40px auto 20px auto;" />
+      
+      <div style="font-size: 14px; color: #f4dfca; opacity: 0.8;">
+        © 2026 הדר סופר. כל הזכויות שמורות.
       </div>
-
     </div>
-
-    <footer class="contact-footer">
-      <p>לשאלות נוספות, רכישות מרוכזות או תמיכה: <strong>054-4828954</strong></p>
-      <p style="font-size: 0.9rem; color: #888;">© 2026 הדר סופר. כל הזכויות שמורות.</p>
-    </footer>
-  </div>
+  </main>
 
 </body>
 </html>
