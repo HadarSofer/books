@@ -15,21 +15,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="css/style?v=1.2.css" />
+  <!-- תיקון הגדרת גרסת ה-CSS כדי שהעיצוב ייטען מחדש בצורה מושלמת -->
+  <link rel="stylesheet" href="css/style.css?v=1.2" />
 </head>
 <body>
   <a class="whatsapp-float" href="https://wa.me/972544828954?text=%D7%94%D7%99%D7%99%20%D7%94%D7%93%D7%A8%2C%20%D7%94%D7%92%D7%A2%D7%A0%D7%9%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%A9%D7%9C%20%D7%A7%D7%A8%D7%9E%D7%9ה%20%D7%95%D7%A0%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%A1%D7%A4%D7%A8" target="_blank" rel="noopener">💬</a>
 
-<nav class="main-nav">
-  <div class="nav-container">
-    <div class="nav-logo">הדר סופר | אתר הסופרת</div>
-    <div class="nav-links">
-      <a href="checkout.html" style="color: var(--coffee); font-weight: 700; font-size: 0.95rem; white-space: nowrap;">רכישת הספרים</a>
-      <a href="#reviews" style="color: var(--coffee); font-weight: 700; font-size: 0.95rem; white-space: nowrap; margin-right: 15px;">המלצות</a>
-      <a href="#author" style="color: var(--coffee); font-weight: 700; font-size: 0.95rem; white-space: nowrap; margin-right: 15px;">על הסופרת</a>
+  <nav class="main-nav" style="position: sticky; top: 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; padding: 12px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 0 15px;">
+      <div class="nav-logo" style="font-weight: 800; font-size: 1.1rem; color: var(--coffee); white-space: nowrap;">
+        הדר סופר | אתר הסופרת
+      </div>
+      <div class="nav-links" style="display: flex; gap: 12px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <!-- הניווט הועבר בהצלחה לדף הרכישה החדש והייעודי שפתר את ה-Cache -->
+        <a href="checkout.html" style="color: var(--coffee); font-weight: 700; font-size: 0.95rem; white-space: nowrap;">רכישת הספרים</a>
+        <a href="#reviews" style="font-weight: 600; font-size: 0.95rem; white-space: nowrap; color: var(--coffee);">המלצות</a>
+        <a href="#author" style="font-weight: 600; font-size: 0.95rem; white-space: nowrap; color: var(--coffee);">על הסופרת</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <header class="hero section">
     <div class="hero-bg"></div>
@@ -40,7 +44,7 @@
         <h2>מאת הדר סופר</h2>
         <p class="lead">בעין טובה, בהומור ובלב מלא רגש, הדר סופר לוקחת אותנו בין שבילי סיפור אהבה מפעים של שני אנשים שעולמותיהם מנוגדים אלה לאלה. עכשיו בדואט שלם.</p>
         
-    <div class="hero-actions" style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin-top: 25px;">
+        <div class="hero-actions" style="display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin-top: 25px;">
           <a class="btn primary btn-turquoise" href="https://meshulam.co.il/purchase?b=cf26a15d90583e101c40a8e2467d4413" target="_blank" rel="noopener" style="padding: 12px 10px;">
             <span style="display: block; font-weight: 700;">הזמינו את הדואט המלא</span>
             <span style="font-size:0.85rem; display:block; opacity:0.9; font-weight: 400; margin-top: 2px;">
@@ -153,11 +157,11 @@
       </div>
 
       <!-- כפתור מעבר לדף ההמלצות המלא -->
-<div style="text-align: center; margin: 40px 0 20px;">
-  <a href="reviews.html" style="display: inline-block; background: transparent; border: 2px solid var(--coffee); color: var(--coffee); padding: 14px 30px; font-weight: 700; font-size: 1.05rem; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-    ✨ לקריאת עוד עשרות המלצות חמות מהקוראים...
-  </a>
-</div>
+      <div style="text-align: center; margin: 40px 0 20px;">
+        <a href="reviews.html" style="display: inline-block; background: transparent; border: 2px solid var(--coffee); color: var(--coffee); padding: 14px 30px; font-weight: 700; font-size: 1.05rem; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+          ✨ לקריאת עוד עשרות המלצות חמות מהקוראים...
+        </a>
+      </div>
     </section>
 
     <section class="section author" id="author">
@@ -166,7 +170,7 @@
         <div style="flex: 1; min-width: 280px;">
           <p class="eyebrow">על הסופרת</p>
           <h2>הדר סופר</h2>
-          <p class="lead" style="font-size: 21px;">הדר סופר היא אמא לשמונה, רקדנית ומורה מוסמכת למחול, ואשת הייטק ופיתוח תוכנה בעלת 25 שנות ניסיון. מתוך נקודת המפגש הייחודית הזו, כבעלת תשובה החיה ונושמת את המורכבות, הניגודים והיופי של החברה הישראלית, היא טווה ברגישות ובהומור סיפורים עמוקים שנוגעים ישר בלב.</p>
+          <p class="lead" style="font-size: 21px;">הדר סופר היא אמא לשמונה, רקדנית ומורה מוסמכת למחול, ואשת הייטק ופיתוח תוכנה בעלת 25 שנות ניסיון. מתוך נקונדת המפגש הייחודית הזו, כבעלת תשובה החיה ונושמת את המורכבות, הניגודים והיופי של החברה הישראלית, היא טווה ברגישות ובהומור סיפורים עמוקים שנוגעים ישר בלב.</p>
         </div>
       </div>
     </section>
@@ -230,7 +234,7 @@
     <div class="container footer-inner">
       <strong>קְרֵמָה - בָּריסטה | הדואט מאת הדר סופר</strong>
     </div>
-  </footer >
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
