@@ -109,11 +109,12 @@
     </section>
 
  <!-- תמונת איור הספר שהוחזרה למקומה -->
-<!-- קונטיינר שחותר את השוליים המיותרים מלמעלה ומלמטה -->
-<div class="illustration-container" style="width: 100%; max-width: 600px; height: 450px; margin: 40px auto -20px; overflow: hidden; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-  <img src="images/book-illustration.jpeg" alt="איור דואט קרמה ובריסטה" style="width: 100%; height: 100%; object-fit: cover; object-position: center 45%;">
-</div>
+<!-- 1. תיקון התמונה: הגדלת הגובה ושינוי הפוזיציה כדי שלא תיחתך למטה -->
+    <div class="illustration-container" style="width: 100%; max-width: 600px; height: 520px; margin: 40px auto 20px; overflow: hidden; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+      <img src="images/book-illustration.jpeg" alt="איור דואט קרמה ובריסטה" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+    </div>
 
+  </section>
 
   <section class="section intro">
     <div class="container narrow visible" style="opacity: 1; transform: none;">
@@ -123,16 +124,33 @@
     </div>
   </section>
 
-    <section class="section features">
-      <div class="container visible" style="opacity: 1; transform: none;">
-        <div class="cards">
-          <article class="card"><span>☕</span><h3>מפגש בין עולמות</h3><p>חילונים - דתיים, תל אביב, כאב, חיפוש, קשר, זהות ואמונה נפגשים בסיפור אחד חי ונוגע.</p></article>
-          <article class="card"><span>🤎</span><h3>רגש והומור</h3><p>כתיבה קולחת שמשלבת עומק, קלילות, רגעים מחויכים ונגיעה אמיצה בנושאים מורכבים.</p></article>
-          <article class="card"><span>📖</span><h3>דמויות שנשארות</h3><p>הילה ויאיר ממשיכים ללכת עם הקוראים גם אחרי סיום הקריאה.</p></article>
-        </div>
+<!-- 2. תיקון הרובריקות: הוספת יישור מרכזי מלא למצב תצוגת מחשב -->
+  <section class="section features" style="display: flex; justify-content: center; width: 100%;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto;">
+      
+      <!-- כרטיסייה 1 -->
+      <div class="feature-card" style="flex: 1; min-width: 250px; max-width: 320px;">
+        <div class="icon">☕</div>
+        <h3>מפגש בין עולמות</h3>
+        <p>חילוני - דתי, תל אביב, כאב, חופש, קשר, זהות ואמונה נמסים בסיפור אחד ונוגע.</p>
       </div>
-    </section>
 
+      <!-- כרטיסייה 2 -->
+      <div class="feature-card" style="flex: 1; min-width: 250px; max-width: 320px;">
+        <div class="icon">🤎</div>
+        <h3>רגש והומור</h3>
+        <p>כתיבה קולחת שמשלבת עומק, קלילות, רגעים מחייכים ונגיעה אמיצה בנושאים מורכבים.</p>
+      </div>
+
+      <!-- כרטיסייה 3 -->
+      <div class="feature-card" style="flex: 1; min-width: 250px; max-width: 320px;">
+        <div class="icon">📖</div>
+        <h3>דמויות שנשארות</h3>
+        <p>הילה ויאיר ממשיכים ללכת עם הקוראים גם אחרי סיום הקריאה.</p>
+      </div>
+
+    </div>
+  </section>
     <section class="section reviews" id="reviews">
       <div class="container visible" style="opacity: 1; transform: none;">
         <p class="eyebrow" style="text-align: center;">חוות דעת</p>
