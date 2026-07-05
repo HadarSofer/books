@@ -407,9 +407,90 @@
     }
   </style>
 
-  <footer class="sticky-footer">
-    <!-- כפתור סגירה (X) -->
-    <button onclick="this.parentElement.style.display='none'" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: transparent; border: none; color: #a69282; font-size: 20px; cursor: pointer; padding: 5px; line-height: 1;">×</button>
+<!-- פוטר חברתי חכם - משולב עם ה-CSS הקיים של האתר -->
+  <style>
+    .sticky-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--espresso);
+      color: #fbf4e8;
+      padding: 12px 20px;
+      text-align: center;
+      border-top: 3px solid var(--caramel);
+      z-index: 15; /* נמוך מהוואטסאפ (שהוא 20) כדי לא לחסום אותו */
+      direction: rtl;
+      box-shadow: 0 -4px 20px rgba(65,35,17,.15);
+    }
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+    .footer-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .footer-credits {
+      font-size: 0.8rem;
+      color: #a69282;
+      font-weight: 300;
+    }
+    .footer-social-text {
+      font-size: 0.9rem;
+      color: #dcd1c4;
+      font-weight: 600;
+    }
+
+    /* תיקון והזזה של כפתור הוואטסאפ הקיים (.whatsapp-float) כשהסרגל מופיע */
+    .whatsapp-float {
+      bottom: 85px !important; /* מקפיץ אותו מעל הסרגל במצב מחשב */
+      transition: bottom 0.3s ease;
+    }
+
+    /* התאמה מיוחדת למובייל (מסכים קטנים מ-768 פיקסלים) */
+    @media (max-width: 768px) {
+      .sticky-footer {
+        padding: 8px 15px;
+      }
+      .footer-container {
+        justify-content: space-between;
+        gap: 5px;
+      }
+      .footer-title {
+        font-size: 0.95rem;
+      }
+      /* הסתרת טקסטים עודפים במובייל כדי לשמור על שורה אחת דקה */
+      .footer-title span, 
+      .footer-credits, 
+      .footer-social-text {
+        display: none !important;
+      }
+      /* הזזת הוואטסאפ במובייל כך שלא יתנגש ולא ייעלם */
+      .whatsapp-float {
+        bottom: 70px !important;
+        left: 16px !important;
+      }
+    }
+
+    /* פונקציה קטנה למקרה שהמשתמש סוגר את הסרגל - הוואטסאפ יחזור למקומו המקורי */
+    .footer-closed ~ .whatsapp-float {
+      bottom: 22px !important;
+    }
+    @media (max-width: 520px) {
+      .footer-closed ~ .whatsapp-float {
+        bottom: 16px !important;
+      }
+    }
+  </style>
+
+  <footer id="site-sticky-footer" class="sticky-footer">
+    <!-- כפתור סגירה (X) - בלחיצה הוא גם יעדכן את הוואטסאפ לרדת חזרה למטה -->
+    <button onclick="document.getElementById('site-sticky-footer').style.display='none'; document.getElementById('site-sticky-footer').classList.add('footer-closed');" style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: transparent; border: none; color: #a69282; font-size: 20px; cursor: pointer; padding: 5px; line-height: 1;">×</button>
 
     <div class="footer-container">
       
@@ -444,6 +525,9 @@
 
     </div>
   </footer>
+
+  <!-- מרווח הגנה קטן בתחתית הדף שימנע הסתרת תוכן -->
+  <div style="height: 65px;"></div>
 
   <!-- מרווח הגנה קטן בתחתית העמוד -->
   <div style="height: 60px;"></div>
