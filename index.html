@@ -151,7 +151,7 @@
       </div>
     </section> <!-- <--- כאן הייתה חסרה תגית הסגירה ששברה את הקרוסלה! --->
 
-    <section class="section reviews" id="reviews">
+ <section class="section reviews" id="reviews">
       <style>
         /* --- עיצוב קרוסלה בסיסי ומותאם לדסקטופ --- */
         .carousel-wrapper {
@@ -235,11 +235,12 @@
             padding: 0 !important;
             border: 1px solid rgba(90,50,29,0.1);
           }
-          .carousel-arrow[onclick*="-1"] {
+          /* תיקון הסלקטורים למניעת כפל והערמות החצים */
+          .carousel-arrow.prev-btn {
             right: 5px;
             left: auto;
           }
-          .carousel-arrow[onclick*="1"] {
+          .carousel-arrow.next-btn {
             left: 5px;
             right: auto;
           }
@@ -263,9 +264,9 @@
           </div>
         </div>
 
-        <!-- קרוסלת המלצות משודרגת -->
+        <!-- קרוסלת המלצות משודרגת עם המחלקות החדשות לחצים -->
         <div class="carousel-wrapper">
-          <button class="carousel-arrow" onclick="moveCarousel(-1)">&#10094;</button>
+          <button class="carousel-arrow prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
           
           <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
@@ -287,7 +288,7 @@
             </div>
           </div>
           
-          <button class="carousel-arrow" onclick="moveCarousel(1)">&#10095;</button>
+          <button class="carousel-arrow next-btn" onclick="moveCarousel(1)">&#10095;</button>
         </div>
       </div>
 
@@ -298,7 +299,7 @@
         </a>
       </div>
     </section>
-
+    
     <section class="section author" id="author">
       <div class="container author-card visible" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; opacity: 1; transform: none;">
         <img src="images/img_hadar.png" alt="הדר סופר" style="max-width: 300px; width: 100%; height: auto; border-radius: 28px; box-shadow: var(--shadow);">
