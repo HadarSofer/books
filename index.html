@@ -151,58 +151,156 @@
       </div>
 
     </div>
-  </section>
-    <section class="section reviews" id="reviews">
-      <div class="container visible" style="opacity: 1; transform: none;">
-        <p class="eyebrow" style="text-align: center;">חוות דעת</p>
-        <h2 style="text-align: center; margin-bottom: 40px;">מה כתבו על הדואט</h2>
-        
-        <div class="quote-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
-          <div class="quote-card" style="background: #ffffff; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); border-right: 5px solid var(--caramel);">
-            <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; margin: 0;">“לא חושבת שקראתי ספר כל כך רומנטי וטהור יחדיו.”</p>
-          </div>
-          <div class="quote-card" style="background: #ffffff; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); border-right: 5px solid var(--coffee);">
-            <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; margin: 0;">“לא ראיתי כתיבה אמיצה כזו מנקודת מבט של אישה דתייה על אהבה וקשר... שיח כנה על דת ואמונה מנקודת מבט אישית ולא תיאולוגית. שאפו על הכתיבה הרגישה!”</p>
-          </div>
-          <div class="quote-card" style="background: #ffffff; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); border-right: 5px solid var(--caramel);">
-            <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; margin: 0;">“גמעתי את הספר בשקיקה! הספר הקודם (קרמה) חזק מאוד, אבל זה (בריסטה) מרגיש לי תופס עוד יותר! הוא סוחף, מרתק, הופך את הבטן וממלא בדמעות של אושר.”</p>
-          </div>
-        </div>
+<section class="section reviews" id="reviews">
+    <style>
+      /* --- עיצוב קרוסלה בסיסי ומותאם לדסקטופ --- */
+      .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 800px;
+        margin: 30px auto 0 auto;
+        gap: 15px;
+      }
+      .carousel-container {
+        flex: 1;
+        overflow: hidden; /* חותך בצורה נקייה את השקופיות האחרות שלא יציצו */
+        position: relative;
+        background: #ffffff;
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 35px;
+        text-align: center;
+        border: 1px solid var(--latte, #e9d6bd);
+      }
+      .carousel-track {
+        display: flex;
+        width: 500%;
+        transition: transform 0.4s ease-in-out;
+      }
+      .carousel-slide {
+        width: 20%;
+        flex-shrink: 0;
+        padding: 0 15px;
+        box-sizing: border-box;
+      }
+      .carousel-arrow {
+        font-size: 2.5rem;
+        color: var(--coffee);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 10px;
+        user-select: none;
+        transition: transform 0.2s, color 0.2s;
+        z-index: 10;
+      }
+      .carousel-arrow:hover {
+        transform: scale(1.2);
+        color: var(--caramel);
+      }
 
-        <div class="carousel-wrapper">
-          <button class="carousel-arrow" onclick="moveCarousel(-1)">&#10094;</button>
-          <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“הספר וואווו! שקעתי בו בצורה עמוקה והוא פשוט סחף! ... הפרק האחרון גאוני...”</p>
-              </div>
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“וואי הדר את כשרון באמת אין לי מה להגיד... אי אפשר היה לעזוב את הספר לשנייה אחת.. קיבלתי ממנו מסר כ"כ חזק.”</p>
-              </div>
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“הכתיבה שלך כל כך אמיתית ופוגשת את הלב במקומות הכי רגישים. מחכה כבר לספר הבא שלך!”</p>
-              </div>
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“דמויות עגולות ומרתקות. מצאתי את עצמי חושבת על הילה ויאיר גם ימים אחרי שסיימתי לקרוא.”</p>
-              </div>
-              <div class="carousel-slide">
-                <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“שילוב נדיר של עומק רגשי, מורכבות חברתית והומור שנון. מומלץ בחום לכל מי שאוהב ספרות מקור איכותית.”</p>
-              </div>
+      /* --- התאמה קריטית למובייל ומסכים קטנים (תיקון ל-image_537ec6.png) --- */
+      @media (max-width: 768px) {
+        .carousel-wrapper {
+          position: relative; /* הופך את האזור לבסיס למיקום אבסולוטי */
+          gap: 0;
+          max-width: 100%;
+        }
+        .carousel-container {
+          padding: 30px 20px !important; /* ריפוד מהודק יותר לטקסט */
+          width: 100% !important;
+          margin: 10px 0 !important;
+        }
+        .carousel-track {
+          /* מבטיח שהרוחב נשאר מותאם מדויק למובייל */
+          width: 500% !important; 
+        }
+        .carousel-slide {
+          width: 20% !important;
+          padding: 0 10px !important;
+        }
+        /* הפיכת החצים לצפים מעל הקצוות כדי שלא ייזרקו למטה */
+        .carousel-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.9) !important;
+          border-radius: 50%;
+          width: 38px;
+          height: 38px;
+          font-size: 1.3rem !important;
+          display: inline-flex !important;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(65,35,17,0.15);
+          padding: 0 !important;
+          border: 1px solid rgba(90,50,29,0.1);
+        }
+        /* מיקום מדויק של החץ הימני והשמאלי בקצוות התיבה */
+        .carousel-arrow[onclick*="-1"] {
+          right: 5px;
+          left: auto;
+        }
+        .carousel-arrow[onclick*="1"] {
+          left: 5px;
+          right: auto;
+        }
+      }
+    </style>
+
+    <div class="container visible" style="opacity: 1; transform: none;">
+      <p class="eyebrow" style="text-align: center;">חוות דעת</p>
+      <h2 style="text-align: center; margin-bottom: 40px;">מה כתבו על הדואט</h2>
+      
+      <!-- גריד המלצות קבועות -->
+      <div class="quote-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        <div class="quote-card" style="background: #ffffff; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); border-right: 5px solid var(--caramel);">
+          <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; margin: 0;">“לא חושבת שקראתי ספר כל כך רומנטי וטהור יחדיו.”</p>
+        </div>
+        <div class="quote-card" style="background: #ffffff; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); border-right: 5px solid var(--coffee);">
+          <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; margin: 0;">“לא ראיתי כתיבה אמיצה כזו מנקודת מבט של אישה דתייה על אהבה וקשר... שיח כנה על דת ואמונה מנקודת מבט אישית ולא תיאולוגית. שאפו על הכתיבה הרגישה!”</p>
+        </div>
+        <div class="quote-card" style="background: #ffffff; padding: 25px; border-radius: 24px; box-shadow: var(--shadow); border-right: 5px solid var(--caramel);">
+          <p style="font-style: italic; line-height: 1.6; font-size: 1.05rem; margin: 0;">“גמעתי את הספר בשקיקה! הספר הקודם (קרמה) חזק מאוד, אבל זה (בריסטה) מרגיש לי תופס עוד יותר! הוא סוחף, מרתק, הופך את הבטן וממלא בדמעות של אושר.”</p>
+        </div>
+      </div>
+
+      <!-- קרוסלת המלצות משודרגת עם תגיות סגורות כהלכה -->
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow" onclick="moveCarousel(-1)">&#10094;</button>
+        
+        <div class="carousel-container">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“הספר וואווו! שקעתי בו בצורה עמוקה והוא פשוט סחף! ... הפרק האחרון גאוני...”</p>
+            </div>
+            <div class="carousel-slide">
+              <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“וואי הדר את כשרון באמת אין לי מה להגיד... אי אפשר היה לעזוב את הספר לשנייה אחת.. קיבלתי ממנו מסר כ"כ חזק.”</p>
+            </div>
+            <div class="carousel-slide">
+              <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“הכתיבה שלך כל כך אמיתית ופוגשת את הלב במקומות הכי רגישים. מחכה כבר לספר הבא שלך!”</p>
+            </div>
+            <div class="carousel-slide">
+              <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“דמויות עגולות ומרתקות. מצאתי את עצמי חושבת על הילה ויאיר גם ימים אחרי שסיימתי לקרוא.”</p>
+            </div>
+            <div class="carousel-slide">
+              <p style="font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--espresso); font-weight: 600; margin: 0;">“שילוב נדיר של עומק רגשי, מורכבות חברתית והומור שנון. מומלץ בחום לכל מי שאוהב ספרות מקור איכותית.”</p>
             </div>
           </div>
-  </div>
-
-</div>
-          <button class="carousel-arrow" onclick="moveCarousel(1)">&#10095;</button>
         </div>
+        
+        <button class="carousel-arrow" onclick="moveCarousel(1)">&#10095;</button>
       </div>
+    </div>
 
-      <div style="text-align: center; margin: 40px 0 20px;">
-        <a href="reviews.html" style="display: inline-block; background: transparent; border: 2px solid var(--coffee); color: var(--coffee); padding: 14px 30px; font-weight: 700; font-size: 1.05rem; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-          לקריאת תגובות והמלצות נוספות...
-        </a>
-      </div>
-    </section>
+    <!-- כפתור מעבר לעמוד כל ההמלצות -->
+    <div style="text-align: center; margin: 40px 0 20px;">
+      <a href="reviews.html" style="display: inline-block; background: transparent; border: 2px solid var(--coffee); color: var(--coffee); padding: 14px 30px; font-weight: 700; font-size: 1.05rem; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+        לקריאת תגובות והמלצות נוספות...
+      </a>
+    </div>
+  </section>
 
     <section class="section author" id="author">
       <div class="container author-card visible" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; opacity: 1; transform: none;">
