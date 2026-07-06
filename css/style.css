@@ -58,41 +58,76 @@
   transform: scale(1.2);
   color: var(--caramel);
 }
-/* --- עיצוב הניווט הראשי והפרדת הלוגו מהתפריט --- */
 
-/* הגדרת המכולה הראשית של הניווט (בהנחה שזה ה-Class או התגית שלהם) */
-.header-inner, nav, .nav-container {
+/* --- עיצוב הניווט הראשי החדש (Navbar) --- */
+.main-nav {
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.nav-container {
+  width: min(1120px, 92vw);
+  margin: auto;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 15px;
+  padding: 0 15px;
+}
+
+.site-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--coffee);
+  white-space: nowrap;
+}
+
+.nav-links {
   display: flex;
-  justify-content: space-between;
+  gap: 16px;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 15px 0;
 }
 
-/* עיצוב ייחודי לכותרת "הדר סופר | אתר הסופרת" כדי שלא תיראה כמו כפתור ניווט */
-.site-title, h1.logo, .brand {
-  font-size: 22px;
-  font-weight: 800; /* הדגשה משמעותית */
-  color: var(--espresso) !important; /* צבע כהה ומובהק */
-  letter-spacing: 0.5px;
-  pointer-events: none; /* מנטרל את אפקט הלחיצה אם זה סתם טקסט */
-  position: relative;
-  padding: 5px 0;
+.nav-link {
+  color: var(--coffee);
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
-/* התאמה מיוחדת לטלפונים ומסכים קטנים */
-@media (max-width: 900px) {
-  .header-inner, nav, .nav-container {
-    flex-direction: column; /* מוריד את כפתורי הניווט שורה מתחת ללוגו */
-    gap: 14px; /* יוצר רווח אנכי ברור ביניהם */
+.nav-link.bold {
+  font-weight: 700;
+}
+
+.nav-link.home-btn {
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+/* התאמה מיוחדת ומרווחת למובייל */
+@media (max-width: 800px) {
+  .nav-container {
+    flex-direction: column !important; /* דוחף את הקישורים מתחת לשם */
+    gap: 12px !important;
     text-align: center;
   }
-
-  .site-title, h1.logo, .brand {
-    font-size: 20px;
-    margin-bottom: 5px;
-    border-bottom: 2px solid var(--latte); /* קו תחתון עדין שמפריד ויזואלית בין השם לניווט */
+  
+  .site-title {
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--latte); /* קו הפרדה עדין מתחת לשם */
     padding-bottom: 8px;
-    width: 100%; /* מתיחת הקו לרוחב */
+    width: 100%;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 14px;
   }
 }
