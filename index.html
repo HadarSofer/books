@@ -293,12 +293,23 @@
         </div>
       </div>
 
-      <!-- כפתור מעבר לעמוד כל ההמלצות -->
+<!-- כפתור מעבר לעמוד כל ההמלצות -->
       <div style="text-align: center; margin: 40px 0 20px;">
-        <a href="reviews.html" style="display: inline-block; background: transparent; border: 2px solid var(--coffee); color: var(--coffee); padding: 14px 30px; font-weight: 700; font-size: 1.05rem; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+        <a href="reviews.html" 
+           class="burgundy-review-btn"
+           style="display: inline-block; background-color: #8B1E3F; color: #ffffff; padding: 14px 34px; font-weight: 700; font-size: 1.05rem; border-radius: 999px; text-decoration: none; border: none; box-shadow: 0 6px 18px rgba(139, 30, 63, 0.2); transition: all 0.25s ease; cursor: pointer;">
           לכתיבת המלצה ולקריאת תגובות והמלצות נוספות...
         </a>
       </div>
+
+      <!-- קוד ה-CSS הקטן שדואג לאפקט הריחוף (אפשר לשים אותו ב-style של הדף או בקובץ ה-CSS) -->
+      <style>
+        .burgundy-review-btn:hover {
+          background-color: #A3284E !important; /* בורדו בהיר ומזמין יותר בריחוף */
+          transform: translateY(-3px); /* קפיצה קלה למעלה */
+          box-shadow: 0 10px 22px rgba(139, 30, 63, 0.35) !important; /* הצל מעמיק */
+        }
+      </style>
     </section>
     
     <section class="section author" id="author">
