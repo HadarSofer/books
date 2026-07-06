@@ -146,13 +146,16 @@
 </head>
 <body>
 
-  <!-- סרגל ניווט עליון גמיש ואחיד לכל המכשירים -->
-  <nav class="top-nav" style="position: sticky; top: 0; background-color: var(--cream); z-index: 1000; box-shadow: 0 2px 10px rgba(74, 53, 37, 0.05); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(74, 53, 37, 0.1); direction: rtl;">
-    <div style="font-weight: 800; color: var(--coffee); font-size: 16px; white-space: nowrap;">
-      הדר סופר | אתר הסופרת
-    </div>
-    <div style="display: flex; gap: 15px; flex-shrink: 0;">  
-      <a href="checkout.html">רכישת הספרים</a>
+<!-- סרגל ניווט עליון אחיד ומקובע -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <!-- הלוגו לחיץ ומוביל לדף הבית -->
+      <a href="index.html" class="site-logo-brand">
+        הדר סופר <span class="logo-sep">|</span> <span class="logo-sub">אתר הסופרת</span>
+      </a>
+      <div class="nav-links">
+        <a href="checkout.html" class="nav-link">רכישת הספרים</a>
+      </div>
     </div>
   </nav>
 
