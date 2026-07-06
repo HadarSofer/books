@@ -11,54 +11,82 @@
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Secular+One&family=David+Libre:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
+    :root {
+      --cream: #f5efe6;
+      --coffee: #6f4e37;
+      --espresso: #2a160c;
+      --accent: #D4A373;
+      --text: #2b2b2b;
+    }
+
     body {
       font-family: 'Assistant', sans-serif;
-      background-color: #f5efe6;
-      color: #2b2b2b;
+      background-color: var(--cream);
+      color: var(--text);
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
 
-    /* תפריט ניווט קבוע בעיצוב זהה לדף הראשי */
+    /* סרגל ניווט עליון אחיד ומקובע - זהה לכל האתר */
     .main-nav {
-      position: fixed;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid rgba(74, 53, 37, 0.1);
+      padding: 15px 0;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       z-index: 1000;
-      padding: 12px 0;
+      box-shadow: 0 2px 10px rgba(74, 53, 37, 0.02);
     }
 
     .nav-container {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 15px;
     }
 
-    .nav-logo {
+    .site-logo-brand {
+      color: var(--coffee);
       font-weight: 800;
-      font-size: 1.1rem;
-      color: #6f4e37;
+      text-decoration: none;
+      font-size: 1.2rem;
     }
 
-    .nav-links a {
-      color: #2b2b2b;
+    .logo-sep {
+      color: var(--accent);
+      margin: 0 5px;
+    }
+
+    .logo-sub {
+      font-weight: 400;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--coffee);
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-right: 15px;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
     }
 
     /* מיכל העיתון הראשי */
     .newspaper-frame {
       max-width: 1050px;
-      margin: 90px auto 40px auto;
+      margin: 40px auto;
       background: #ffffff;
       padding: 40px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -121,7 +149,7 @@
     .article-header .author-line {
       font-size: 1.1rem;
       font-weight: bold;
-      color: #6f4e37;
+      color: var(--coffee);
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
       display: inline-block;
@@ -189,7 +217,7 @@
       color: #2b2b2b;
     }
     .right-info a {
-      color: #6f4e37;
+      color: var(--coffee);
       text-decoration: none;
     }
 
@@ -201,24 +229,13 @@
       padding: 10px 20px;
       border-radius: 12px;
       border: 1px solid #e2d1c3;
-    }
-
-    .qr-mock {
-      width: 65px;
-      height: 65px;
-      background: #333;
-      color: #fff;
-      display: flex;
-      align-items: center;
+      width: 100%;
       justify-content: center;
-      font-size: 0.7rem;
-      text-align: center;
-      font-weight: bold;
     }
 
     .buy-link-btn {
       display: inline-block;
-      background-color: #6f4e37;
+      background-color: var(--coffee);
       color: white !important;
       padding: 12px 30px;
       border-radius: 30px;
@@ -234,12 +251,13 @@
 
     /* התאמה למובייל - הופך לטור אחד קריא */
     @media (max-width: 850px) {
+      .nav-container { flex-direction: column; gap: 10px; text-align: center; }
       .grid-3-columns {
         grid-template-columns: 1fr;
         text-align: right;
       }
       .newspaper-frame {
-        margin: 80px 10px 20px 10px;
+        margin: 20px 10px;
         padding: 20px;
       }
       .article-header h1 {
@@ -254,20 +272,17 @@
 </head>
 <body>
 
-  <!-- נבאר עליון אחיד לאתר -->
-<!-- סרגל ניווט עליון גמיש (Responsive) ואחיד לכל המכשירים -->
-  <nav class="top-nav" style="position: sticky; top: 0; background-color: var(--cream); z-index: 1000; box-shadow: 0 2px 10px rgba(74, 53, 37, 0.05); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(74, 53, 37, 0.1); direction: rtl;">
-    
-    <!-- לוגו ימני עם מניעת שבירת שורה בטלפון -->
-    <div style="font-weight: 800; color: var(--coffee); font-size: 16px; white-space: nowrap;">
-      הדר סופר | אתר הסופרת
+  <!-- סרגל ניווט עליון אחיד ומקובע - זהה לחלוטין לכל האתר -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="site-logo-brand">
+        הדר סופר <span class="logo-sep">|</span> <span class="logo-sub">אתר הסופרת</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">דף הבית</a>
+        <a href="checkout.html" class="nav-link">רכישת הספרים</a>
+      </div>
     </div>
-
-    <!-- קישורים שמאליים שלא נשברים -->
-    <div style="display: flex; gap: 15px; flex-shrink: 0;">
-      <a href="checkout.html" style="color: var(--coffee); font-weight: 700; text-decoration: none; font-size: 14px; transition: opacity 0.2s; opacity: 0.85; white-space: nowrap;">רכישת הספרים</a>
-    </div>
-
   </nav>
 
   <!-- דף העיתון המעוצב -->
@@ -311,16 +326,15 @@
         <p class="highlight-para">המפגש הראשוני מלא בעוקצנות, התעלמות, דעות קדומות ואף זלזול. לאט לאט נוצר מפגש מלא חמלה, הקשבה, רוך ואף חתירה לעבר יעד משותף המתמקד בסיוע לבנו הצעיר של יאיר תוך התהלכות לעיתים על חבל דק ולעיתים על קרקע מוצקה ויציבה יותר.</p>
         <p>שניהם יוצאים למסע מותח רווי קשיים הנתון בתוך 'דדליין' שלא ניתן לדלג מעליו. המטרה המשותפת גדולה משניהם ומחייבת אותם להתמודד עם וויכוחים המשקפים את ראיית המציאות השונה שלהם וגם להתמודד עם פחדים וכאב רב.</p>
         <p>הילה לא מוותרת על עולמה הרוחני ולא מתכופפת. דמותה מתוארת כמלאת ביטחון עצמי בזהותה היהודית מחד, ומאידך בעלת יכולת לנהל שיח מורכב עם מי שחי וחושב ההיפך ממנה. האם כל הבחירות של הילה כאשה דתייה המתוארות בספר הינן מדויקות? האם המפגש עם אדם בעל תפיסת עולם כה שונה משלה נתון במסגרת הנכונה? האם נכון יותר להימנע ממפגש שכזה לחלוטין? או שמא זה בלתי אפשרי? כל אלו שאלות חשובות ומעוררות מחשבה שהספר מציף.</p>
-        <p class="highlight-para">על שאלות שכאלו ראויים לדיון גדולים ורציניים, אך ייתכן וכל עוד ישנה מציאות שכזו ממנה אי אפשר להימנע לאור חיינו המשותפים באופן תדיר מפגשים משותפים, הדיון בבחירות לאורך הספר הוא חשוב ובמקום לגמרי.</p>
+        <p class="highlight-para">על שאלות שכאלו ראויים לדיון גדולים ורציניים, אך יייתכן וכל עוד ישנה מציאות שכזו ממנה אי אפשר להימנע לאור חיינו המשותפים באופן תדיר מפגשים משותפים, הדיון בבחירות לאורך הספר הוא חשוב ובמקום לגמרי.</p>
         <p>הספר פותח בתיאור חי ומלא רגש המתאר את חיי הרווקות של גיבורת הספר ואת האופן בו חֵבְרַה שלמה, קרובה ורחוקה, לעיתים מתנהלת בחוסר רגישות. הברכה "בקרוב אצלך" יכולה הרי להישמע בכל מיני אינטונציות ולא בטוח שראוי לשלוף אותה על אוטומט ללא מחשבה מקדימה כיצד הדבר מתקבל אצל השומע או השומעת הספציפיים. לעיתים מדובר בברכה, לעיתים כזריית מלח על פצע פתוח.</p>
         <p class="highlight-para">הסיטואציה הזו מתארת את המציאות המורכבת שלא מאפשרת פתרון זול של 'העתק הדבק' ללא הקשבה אמיתית לעולמו המיוחד של האדם. כל אדם.</p>
-        <p>סיפור הרקע של הספר והMפגש הראשוני כאמור הוא התנדבות בבית אבות וכך יוצא שדמויות רבות ומגוונות בגילאים שונים ורחוקים נפגשים במקום אחד המחייב את כולם לגלות רגישות, התעניינות וסיוע למי שכחברה אנו אמורים לשאת אליהם עיניים – הזקנים.</p>
-        <p>המחברת מאירה זוויות אנושיות רבות במפגש הזה וחושפת עבור הקוראים את הצורך להתעלות מעל החיצוני, הגלוי ומה שמעל לפני השטח ולהקשיב ללב. וגם לראש כמובן.</p>
+        <p>סיפור הרקע של הספר והמפגש הראשוני כאמור הוא התנדבות בבית אבות וכך יוצא שדמויות רבות ומגוונות בגילאים שונים ורחוקים נפגשים במקום אחד המחייב את כולם לגלות רגישות, התעניינות וסיוע למי שכחברה אנו אמורים לשאת אליהם עיניים – הזקנים.</p>
+        <p>ההתנהלות בעיניים פקוחות ומטרה משותפת נהירה, קל יותר להתנהל בחופשיות מבלי לדרוך על אצבעות הרגליים ולדחוק האחד את השני.</p>
       </div>
 
       <!-- טור שלישי (שמאל) -->
       <div class="column">
-        <p>ההתנהלות בחורים ומטרה משותפת נהירה, קל יותר להתנהל בחופשיות מבלי לדרוך על אצבעות הרגליים ולדחוק האחד את השני.</p>
         <p>בהמשך הספר כשנוצר מפגש בין הילה ליאיר המנסים לברר את מטרות הבית המשותף הפוטנציאלי של שניהם, כללי ההתנהלות וגבולותיו הערכיים, מסתבר שהדבר מורכב הרבה יותר. הוא כלל לא פשוט אבל הוא לא נתון לכישלון מראש.</p>
         <p>נקודה למחשבה.</p>
         <p>במציאות חיינו הלאומית כאשר השיח על חיבור ואחדות מנוצל לא פעם על ידי ציניקנים המבקשים להכריע באלימות ולא לקבל את כללי המשחק הדמוקרטיים, הספר הזה יכול לשמש מצע נהדר לשאלות רבות העולות שוב ושוב.</p>
@@ -341,10 +355,8 @@
       </div>
       
       <div class="footer-action-grid">
-
-
         <div class="qr-placeholder-box">
-         <a href="checkout.html" class="buy-link-btn">מעבר לאפשרויות הרכישה המאובטחת ←</a>
+          <a href="checkout.html" class="buy-link-btn">מעבר לאפשרויות הרכישה המאובטחת ←</a>
         </div>
       </div>
     </footer>
