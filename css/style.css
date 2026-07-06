@@ -59,15 +59,22 @@
   color: var(--caramel);
 }
 
-/* --- עיצוב הניווט הראשי החדש (Navbar) --- */
+/* --- עיצוב הניווט הראשי המשודרג (Navbar קבוע) --- */
 .main-nav {
-  position: sticky;
+  position: fixed; /* שינוי ל-fixed כדי לנעול את הסרגל תמיד בראש העמוד */
   top: 0;
+  left: 0;
+  right: 0;
   background: var(--white);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   z-index: 1000;
-  padding: 12px 0;
+  padding: 16px 0;
   width: 100%;
+}
+
+/* הוספת מרווח עליון ל-body כדי שהסרגל הנעול לא יסתיר את תחילת התוכן של האתר */
+body {
+  padding-top: 75px; 
 }
 
 .nav-container {
@@ -77,57 +84,79 @@
   flex-direction: row !important;
   justify-content: space-between !important;
   align-items: center !important;
-  gap: 15px;
   padding: 0 15px;
 }
 
-.site-title {
+/* עיצוב הלוגו כקישור אלגנטי */
+.site-logo-brand {
+  font-size: 1.45rem;
   font-weight: 800;
-  font-size: 1.2rem;
-  color: var(--coffee);
+  color: var(--espresso) !important; /* שמירה על הצבע המקורי */
+  text-decoration: none;
   white-space: nowrap;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s ease;
 }
 
+/* אפקט עדין כשעומדים על הלוגו כדי להראות שהוא לחיץ */
+.site-logo-brand:hover {
+  opacity: 0.85;
+}
+
+.logo-sep {
+  color: var(--caramel);
+  margin: 0 4px;
+  font-weight: 300;
+}
+
+.logo-sub {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* עיצוב הקישורים משמאל */
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   align-items: center;
 }
 
 .nav-link {
   color: var(--coffee);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
-.nav-link.bold {
-  font-weight: 700;
+.nav-link:hover {
+  color: var(--caramel);
 }
 
-.nav-link.home-btn {
-  opacity: 0.85;
-  font-size: 14px;
-}
-
-/* התאמה מיוחדת ומרווחת למובייל */
+/* התאמה מושלמת למובייל - נעול, ממורכז ומרווח */
 @media (max-width: 800px) {
+  body {
+    padding-top: 105px; /* מרווח גדול יותר במובייל כי הסרגל תופס 2 שורות */
+  }
+
   .nav-container {
-    flex-direction: column !important; /* דוחף את הקישורים מתחת לשם */
+    flex-direction: column !important;
     gap: 12px !important;
     text-align: center;
   }
   
-  .site-title {
-    font-size: 1.15rem;
-    border-bottom: 2px solid var(--latte); /* קו הפרדה עדין מתחת לשם */
-    padding-bottom: 8px;
+  .site-logo-brand {
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--latte);
+    padding-bottom: 10px;
     width: 100%;
+    display: block;
   }
 
   .nav-links {
     width: 100%;
     justify-content: center;
-    gap: 14px;
+    gap: 20px; /* רווח נעים ללחיצה עם האצבע */
   }
 }
