@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>לרקוד בין ההפכים | הרצאה מאת הדר סופר</title>
+  
+  <link rel="icon" type="image/png" href="https://hadarsofer.github.io/books/images/favicon-coffee.png?v=300">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- קישור ל-CSS הקיים שלך כדי לשמור על אחידות -->
+  <link rel="stylesheet" href="https://hadarsofer.github.io/books/css/style.css?v=1.5" />
+
+  <style>
+    /* עיצובים ייחודיים לדף ההרצאה שיתפקד כפלייר מודרני */
+    .lecture-hero {
+      background: linear-gradient(135deg, #f7f2eb 0%, #ede3d4 100%);
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom: 5px solid var(--caramel, #c59b27);
+    }
+    .lecture-subtitle {
+      font-size: 1.5rem;
+      color: var(--caramel, #c59b27);
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    .lecture-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      margin: 60px 0;
+      align-items: center;
+    }
+    .lecture-content h3 {
+      font-size: 1.8rem;
+      color: var(--coffee, #4a2c11);
+      margin-bottom: 20px;
+    }
+    .lecture-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    /* כרטיסיות מרובעות מעוצבות עבור "מה תקבלו" */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .benefit-card {
+      background: #fdfbf7;
+      border: 1px solid #ede3d4;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      transition: transform 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+    .benefit-card h4 {
+      font-size: 1.25rem;
+      color: var(--coffee, #4a2c11);
+      margin-bottom: 10px;
+    }
+    .benefit-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    .cta-box {
+      background: var(--coffee, #4a2c11);
+      color: #fff;
+      padding: 50px 30px;
+      border-radius: 16px;
+      text-align: center;
+      margin: 60px 0;
+      box-shadow: 0 10px 30px rgba(74, 44, 17, 0.15);
+    }
+    .cta-box h3 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .cta-box p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: background 0.3s;
+    }
+    .btn-whatsapp:hover {
+      background: #20ba5a;
+    }
+    
+    @media (max-width: 768px) {
+      .lecture-grid {
+        grid-template-columns: 1fr;
+      }
+      .lecture-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- סרגל ניווט מקוצר לדף פנימי -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="site-logo-brand">
+        הדר סופר <span class="logo-sep">|</span> <span class="logo-sub">אתר הסופרת</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">חזרה לדף הבית</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- חלון עליון / כותרת הפלייר -->
+  <header class="lecture-hero">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--coffee, #4a2c11);">הרצאות ומפגשי השראה</p>
+      <h1 style="font-size: 3rem; color: var(--coffee, #4a2c11); font-weight: 800; margin: 10px 0;">לרקוד בין ההפכים</h1>
+      <p class="lecture-subtitle">אומנות ההקשבה, הגשמת חלומות וראיית האחר</p>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 1000px; padding: 0 20px;">
+    
+    <!-- גריד: טקסט ותיאור כללי -->
+    <section class="lecture-grid">
+      <div class="lecture-content">
+        <h3>על המפגש</h3>
+        <p>כולנו נוטים לפעמים להישאר בתוך התבניות הנוחות והמוכרות של חיינו. אבל מה קורה כשהנשמה שלנו מבקשת מאיתנו לגדול ומזכירה לנו את החלומות ששמרנו במגירה?</p>
+        <p>بמפגש אינטימי בגובה העיניים, משתפת אותנו הסופרת והמדריכה (והמתכנתת, ואמא לשמונה...) במסלול חייה הייחודי ובאתגרים שליוו אותה בדרך לפריצת התבניות הללו. דרך הכלים והמשברים שעברה בדרך להוצאת ספריה, נגלה כיצד הסכמה לדרך לא מושלמת, תנועה מתוך הלא-נודע, טעויות ותיקונים בלתי פוסקים הם הבסיס האמיתי לצמיחה ולמימוש עצמי.</p>
+        <p>בהמשך המפגש, נצלול אל מאחורי הקלעים של הדמויות המורכבות בדואט הספרים המצליח <strong>"קרמה"</strong> ו-<strong>"בריסטה"</strong> (הילה ויאיר), ונחשף לנקודת מבט ייחודית ומנחמת על המציאות הישראלית. נדבר על כוחה של אהבת חינם, על היכולת להקשיב באמת ולהסיר מגננות, ועל הגילוי המרעיש שהחיבור שלנו כעם לא דורש מאיתנו להיות זהים. בדיוק כמו במחול – החוכמה היא לדעת לנוע יחד, למצוא את המקצב המשותף ולרקוד בתוך סימפוניה עשירה של הפכים.</p>
+      </div>
+      <!-- מיקום מומלץ לתמונה שלך -->
+      <div style="text-align: center;">
+        <img src="https://hadarsofer.github.io/books/images/imag_socail.png" alt="הדר סופר" style="max-width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 4px solid #fff;">
+      </div>
+    </section>
+
+    <!-- חלק: מה תקבלו במפגש (כרטיסיות פלייר) -->
+    <section style="margin: 60px 0;">
+      <h3 style="text-align: center; color: var(--coffee, #4a2c11); font-size: 2rem; margin-bottom: 10px;">מה תקבלו במפגש?</h3>
+      <p style="text-align: center; color: #777; margin-bottom: 30px;">כלים, חוויות ותובנות לחיים שתוכלו לקחת איתכם הלאה</p>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <span class="benefit-icon">🎯</span>
+          <h4>כלים מעשיים לתנועה</h4>
+          <p>איך משימות קטנות וממוקדות מניעות תהליכים ומייצרות הזדמנויות שלא ציפינו להן.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">✨</span>
+          <h4>שחרור מאשליית השלמות</h4>
+          <p>הבנה מדוע "דרך חלקה" היא אשליה, ואיך קצב של "טעות ותיקון" הוא המנוע האמיתי לכל חלום.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">💬</span>
+          <h4>אומנות ההקשבה</h4>
+          <p>תובנות עמוקות על היכולת להקשיב מבלי לרצות לצאת "צודקים", ועל הדרך להמיס סטיגמות וחומות.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">📝</span>
+          <h4>חוויה אקטיבית ומחברת</h4>
+          <p>המפגש כולל משימת כתיבה קצרה, חווייתית ואינטראקטיבית שמחברת כל משתתף לניצוץ ולחלום שלו.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- קהל יעד -->
+    <section style="background: #fcfaf6; padding: 40px; border-radius: 12px; border-right: 5px solid var(--caramel, #c59b27); margin: 50px 0;">
+      <h4 style="font-size: 1.4rem; color: var(--coffee, #4a2c11); margin-bottom: 15px;">למי ההרצאה מתאימה?</h4>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 0;">
+        לחוגי בית, ספריות, מרכזים קהילתיים, ערבי נשים, ארגונים, וכל קבוצה שמחפשת ערב עם תוכן עמוק, מעצים ומחבר ללב.
+      </p>
+    </section>
+
+    <!-- קופסת הנעה לפעולה (וואטסאפ) -->
+    <section class="cta-box">
+      <h3>רוצים להזמין את ההרצאה או לשמוע פרטים נוספים?</h3>
+      <p>לחצו על הכפתור כדי לדבר איתי ישירות בוואטסאפ ולתאם מועד</p>
+      <a class="btn-whatsapp" href="https://wa.me/972544828954?text=%D7%94%D7%99%D7%99%20%D7%94%D7%93%D7%A8%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%91%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%94%D7%A8%D7%A6%D7%90%D7%94%20%27%D7%9C%D7%A8%D7%A7%D7%95%D7%93%20%D7%91%D7%99%D7%9F%20%D7%94%D7%94%D7%A4%D7%9B%D7%99%D7%9D%27." target="_blank" rel="noopener">
+        <span>💬</span> דברו איתי בוואטסאפ
+      </a>
+    </section>
+
+  </main>
+
+</body>
+</html>
