@@ -72,59 +72,63 @@
         <img src="images/book-cover.png" alt="כריכת הדואט קרמה ובריסטה מאת הדר סופר" class="book-cover" />
       </div>
     </div>
-   <!-- באנר קומפקטי ובולט להטבת ט"ו באב -->
-<div class="tu-beav-compact-banner" style="
-  background: linear-gradient(135deg, #4a2c11 0%, #2d1a0a 100%);
-  color: #fff;
-  border-radius: 12px;
-  padding: 18px 25px;
+<!-- עיגול/מדליית הנחה בולטת לט"ו באב -->
+<div style="
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #fff3d1 0%, #f4a261 100%);
+  border: 5px dashed #c59b27;
+  border-radius: 50%;
   margin: 30px auto;
-  max-width: 700px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  border-right: 6px solid #c59b27;
+  padding: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 15px;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(197, 155, 39, 0.35);
   position: relative;
-  overflow: hidden;
 ">
-  <!-- עיטור רקע קטן שנקשר להנחה/חג -->
-  <div style="position: absolute; left: -10px; bottom: -10px; font-size: 4rem; opacity: 0.08; pointer-events: none;">🏷️</div>
+  <!-- אייקון מתנה קטן בראש -->
+  <span style="font-size: 1.6rem; line-height: 1; margin-bottom: 5px;">🎁</span>
 
-  <!-- צד הטקסט המתומצת -->
-  <div style="flex: 1; min-width: 260px; text-align: right;">
-    <div style="display: inline-block; background: #e63946; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; margin-bottom: 6px;">
-      ✨ הטבת ט"ו באב – חג של חיבורים
-    </div>
-    <div style="font-size: 1.05rem; font-weight: 700; color: #fdfbf7; line-height: 1.4;">
-      נהנים מהנחה נוספת עד ל-ט"ו באב!
-    </div>
-    <div style="font-size: 0.82rem; color: #d1c7bd; margin-top: 3px;">
-      * ההנחה תתעדכן אוטומטית בדף התשלום.
-    </div>
+  <!-- שורה ראשונה - מוגדלת, מודגשת ובולטת מאוד -->
+  <div style="
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #4a2c11;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px 0px #fff;
+  ">
+    ✨ הטבת ט"ו באב – חג של חיבורים!
   </div>
 
-  <!-- כפתור קומפקטי במראה תג הנחה/מתנה -->
+  <!-- טקסט ההנחה -->
+  <div style="font-size: 0.95rem; font-weight: 700; color: #2d1a0a; margin-bottom: 4px;">
+    נהנים מהנחה נוספת עד ל-ט"ו באב
+  </div>
+
+  <!-- הערת תשלום -->
+  <div style="font-size: 0.75rem; color: #555; margin-bottom: 12px; font-weight: 600;">
+    *תתעדכן אוטומטית בדף התשלום
+  </div>
+
+  <!-- כפתור מעבר -->
   <a href="checkout.html" style="
-    background: #c59b27;
+    background: #e63946;
     color: #fff;
-    padding: 10px 22px;
-    border-radius: 25px;
-    font-size: 0.95rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: bold;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 3px 10px rgba(197, 155, 39, 0.3);
-    white-space: nowrap;
-    transition: transform 0.2s ease, background 0.2s ease;
-  " onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';">
-    <span>🏷️</span> לרכישה בהנחה
+    box-shadow: 0 3px 8px rgba(230, 57, 70, 0.4);
+  ">
+    לרכישה בהנחה &gt;
   </a>
 </div>
+
   </header>
 
   <main>
