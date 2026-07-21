@@ -72,30 +72,59 @@
         <img src="images/book-cover.png" alt="כריכת הדואט קרמה ובריסטה מאת הדר סופר" class="book-cover" />
       </div>
     </div>
-    <!-- קופסת הנעה לפעולה מעוצבת עם הטבת ט"ו באב לספרים -->
-<section class="cta-box" style="position: relative; overflow: hidden; background: var(--coffee, #4a2c11); color: #fff; padding: 50px 30px; border-radius: 16px; text-align: center; margin: 60px 0; box-shadow: 0 10px 30px rgba(74, 44, 17, 0.15);">
-  
-  <!-- תגית חג מיוחדת -->
-  <div style="display: inline-block; background: #c59b27; color: #fff; padding: 6px 18px; border-radius: 20px; font-size: 0.95rem; font-weight: bold; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(197, 155, 39, 0.3);">
-    ✨ הטבת ט"ו באב – חג החיבור והאיחוד
+   <!-- באנר קומפקטי ובולט להטבת ט"ו באב -->
+<div class="tu-beav-compact-banner" style="
+  background: linear-gradient(135deg, #4a2c11 0%, #2d1a0a 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 18px 25px;
+  margin: 30px auto;
+  max-width: 700px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-right: 6px solid #c59b27;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- עיטור רקע קטן שנקשר להנחה/חג -->
+  <div style="position: absolute; left: -10px; bottom: -10px; font-size: 4rem; opacity: 0.08; pointer-events: none;">🏷️</div>
+
+  <!-- צד הטקסט המתומצת -->
+  <div style="flex: 1; min-width: 260px; text-align: right;">
+    <div style="display: inline-block; background: #e63946; color: #fff; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; margin-bottom: 6px;">
+      ✨ הטבת ט"ו באב – חג של חיבורים
+    </div>
+    <div style="font-size: 1.05rem; font-weight: 700; color: #fdfbf7; line-height: 1.4;">
+      נהנים מהנחה נוספת עד ל-ט"ו באב!
+    </div>
+    <div style="font-size: 0.82rem; color: #d1c7bd; margin-top: 3px;">
+      * ההנחה תתעדכן אוטומטית בדף התשלום.
+    </div>
   </div>
 
-  <h3 style="color: #fff; margin-bottom: 15px; font-size: 2rem;">רוצים להתחדש בדואט הספרים?</h3>
-  
-  <!-- הבלטת ההנחה לספרים -->
-  <p style="font-size: 1.25rem; font-weight: 600; color: #fdfbf7; margin-bottom: 8px;">
-    חוגגים את יום החיבור והסרת המחיצות: <span style="color: #f4a261; text-decoration: underline;">הנחה חגיגית מיוחדת לרכישת הצמד "קרמה" ו"בריסטה"!</span>
-  </p>
-  <p style="font-size: 0.95rem; opacity: 0.85; margin-bottom: 25px;">
-הנחה תתעדכן ותופיע אוטומטית בדף התשלום.
-  </p>
-
-  <!-- כפתור מעבר ישיר לדף checkout.html -->
-  <a class="btn-books" href="checkout.html" style="display: inline-flex; align-items: center; gap: 10px; background: #c59b27; color: #fff; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; text-decoration: none; box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4); transition: 0.3s;">
-    <span>📚</span> לרכישת הדואט ומימוש ההטבה
+  <!-- כפתור קומפקטי במראה תג הנחה/מתנה -->
+  <a href="checkout.html" style="
+    background: #c59b27;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 10px rgba(197, 155, 39, 0.3);
+    white-space: nowrap;
+    transition: transform 0.2s ease, background 0.2s ease;
+  " onmouseover="this.style.transform='scale(1.03)';" onmouseout="this.style.transform='scale(1)';">
+    <span>🏷️</span> לרכישה בהנחה
   </a>
-
-</section>
+</div>
   </header>
 
   <main>
