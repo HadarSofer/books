@@ -128,16 +128,18 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      /* מעבר הדרגתי וחלק */
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      z-index: 1;
+      /* מעבר דינמי עם קפיציות קלה (Magnifying Glass feel) */
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
       cursor: default;
     }
 
-    /* אפקט ההבלטה במעבר עכבר */
+    /* אפקט זכוכית מגדלת - הגדלה משמעותית והקפצה קדימה */
     .review-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(74, 53, 37, 0.12);
+      transform: scale(1.06) translateY(-6px);
+      box-shadow: 0 18px 35px rgba(74, 53, 37, 0.18);
       border-color: var(--accent);
+      z-index: 10; /* מבטיח שהכרטיס יישאר מעל השאר בזמן ההגדלה */
     }
 
     .quote-icon {
@@ -412,7 +414,7 @@
       <!-- המלצה 18 -->
       <div class="review-card">
         <div class="quote-icon">”</div>
-        <div class="review-text">"קראתי לאחרונה את הספר 'קרמה' ונהניתי מכל רגע. הספר היה מלא תובנות מעניינות על היהדות והחיים, שהוצגו בצורה בהירה ומעוררת השראה. אחד הדברים שאהבתי במיוחד היה האופן שהמחברת הצליחה לשלב רגש והומור בסיפור. דמויות הספר היו כל כך חיות ואנושיות, חוויתי את הרגשות שלהן ביחד איתן. גם כשהסיפור עסק בנושאים כואבים, הצליחה המחברת לגעת בי עם רגישות וחמלה. ההומור שזור לאורך כל הספר היה מצחיק ומרענן. מצאתי את עצמי מחייכת וצוקת בקול בהרבה רגעים מבדחים. מדובר בספר מפתיע, מלא חוכמה שגרם לי הנאה רבה. אני ממליצה עליו בחום לכל מי שמחפש סיפור מרגש ומשמעותי שיגע בלב."</div>
+        <div class="review-text">"קראתי לאחרונה את הספר 'קרמה' ונהניתי מכל רגע. הספר היה מלא תובנות מעניינות על היהדות והחיים, שהוצגו בצורה בהירה ומעוררת השראה. אחד הדברים שאהבתי במיוחד היה האופן שהמחברת הצליחה לשלב רגש והומור בסיפור. דמויות הספר היו כל כך חיות ואנושיות, חוויתי את הרגשות שלהן ביחד איתן. גם כשהסיפור עסק בנושאים כואבים, הצליחה המחברת לגעת בי עם רגישות וחמלה. ההומור שזור לאורך כל הספר היה מצחיק ומרענן. מצאתי את עצמי מחייכת וצוחקת בקול בהרבה רגעים מבדחים. מדובר בספר מפתיע, מלא חוכמה שגרם לי הנאה רבה. אני ממליצה עליו בחום לכל מי שמחפש סיפור מרגש ומשמעותי שיגע בלב."</div>
         <div class="review-footer">
           <span class="reviewer-name">שיראל לוי</span>
         </div>
@@ -428,7 +430,7 @@
 
   </div>
 
-  <!-- סקריפט ה-JavaScript שמפעיל את הכל ומקשר לגוגל שיטס -->
+  <!-- סקריפט ה-JavaScript -->
   <script>
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7N3AnorMLupWdvkhy120OfXw7OzuDGonlkXccCaSZacGSI3XC3QFUd2IrJ9LizeIF8Q/exec';
 
@@ -447,7 +449,6 @@
         container.innerHTML = '';
         reviews.forEach(rev => {
           const reviewCard = document.createElement('div');
-          // שיוך המחלקה review-card כדי ליהנות מעיצוב ואפקט ה-hover
           reviewCard.className = 'review-card';
           reviewCard.style.marginBottom = '20px';
           
