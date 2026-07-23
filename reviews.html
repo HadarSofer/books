@@ -37,7 +37,7 @@
       padding: 0 20px;
     }
 
-    /* עיצוב סרגל הניווט העליון שהיה חסר */
+    /* עיצוב סרגל הניווט העליון */
     .main-nav {
       background-color: var(--white);
       border-bottom: 1px solid rgba(74, 53, 37, 0.1);
@@ -111,7 +111,7 @@
       font-weight: 600;
     }
 
-    /* גריד ההמלצות הקבועות */
+    /* גריד ההמלצות והכרטיסים */
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -124,15 +124,20 @@
       border-radius: 16px;
       padding: 25px;
       box-shadow: 0 4px 15px rgba(74, 53, 37, 0.04);
-      border: 1px solid rgba(212, 163, 115, 0.15);
+      border: 1px solid rgba(212, 163, 115, 0.2);
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: transform 0.2s ease;
+      /* מעבר הדרגתי וחלק */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: default;
     }
 
+    /* אפקט ההבלטה במעבר עכבר */
     .review-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(74, 53, 37, 0.12);
+      border-color: var(--accent);
     }
 
     .quote-icon {
@@ -179,14 +184,14 @@
 </head>
 <body>
 
-  <!-- סרגל ניווט עליון אחיד ומקובע - זהה לחלוטין לדף ההמלצות -->
+  <!-- סרגל ניווט עליון -->
   <nav class="main-nav">
     <div class="nav-container">
       <a href="index.html" class="site-logo-brand">
         הדר סופר <span class="logo-sep">|</span> <span class="logo-sub">אתר הסופרת</span>
       </a>
       <div class="nav-links">
-           <a href="checkout.html" class="nav-link">רכישת הספרים</a>
+        <a href="checkout.html" class="nav-link">רכישת הספרים</a>
         <a href="index.html" class="nav-link">דף הבית</a>        
       </div>
     </div>
@@ -407,7 +412,7 @@
       <!-- המלצה 18 -->
       <div class="review-card">
         <div class="quote-icon">”</div>
-        <div class="review-text">"קראתי לאחרונה את הספר 'קרמה' ונהניתי מכל רגע. הספר היה מלא תובנות מעניינות על היהדות והחיים, שהוצגו בצורה בהירה ומעוררת השראה. אחד הדברים שאהבתי במיוחד היה האופן שהמחברת הצליחה לשלב רגש והומור בסיפור. דמויות הספר היו כל כך חיות ואנושיות, חוויתי את הרגשות שלהן ביחד איתן. גם כשהסיפור עסק בנושאים כואבים, הצליחה המחברת לגעת בי עם רגישות וחמלה. ההומור שזור לאורך כל הספר היה מצחיק ומרענן. מצאתי את עצמי מחייכת וצוחקת בקול בהרבה רגעים מבדחים. מדובר בספר מפתיע, מלא חוכמה שגרם לי הנאה רבה. אני ממליצה עליו בחום לכל מי שמחפש סיפור מרגש ומשמעותי שיגע בלב."</div>
+        <div class="review-text">"קראתי לאחרונה את הספר 'קרמה' ונהניתי מכל רגע. הספר היה מלא תובנות מעניינות על היהדות והחיים, שהוצגו בצורה בהירה ומעוררת השראה. אחד הדברים שאהבתי במיוחד היה האופן שהמחברת הצליחה לשלב רגש והומור בסיפור. דמויות הספר היו כל כך חיות ואנושיות, חוויתי את הרגשות שלהן ביחד איתן. גם כשהסיפור עסק בנושאים כואבים, הצליחה המחברת לגעת בי עם רגישות וחמלה. ההומור שזור לאורך כל הספר היה מצחיק ומרענן. מצאתי את עצמי מחייכת וצוקת בקול בהרבה רגעים מבדחים. מדובר בספר מפתיע, מלא חוכמה שגרם לי הנאה רבה. אני ממליצה עליו בחום לכל מי שמחפש סיפור מרגש ומשמעותי שיגע בלב."</div>
         <div class="review-footer">
           <span class="reviewer-name">שיראל לוי</span>
         </div>
@@ -442,13 +447,15 @@
         container.innerHTML = '';
         reviews.forEach(rev => {
           const reviewCard = document.createElement('div');
-          reviewCard.style.cssText = 'background: var(--white); padding: 25px; border-radius: 16px; box-shadow: 0 4px 15px rgba(74, 53, 37, 0.04); border: 1px solid rgba(212, 163, 115, 0.15); margin-bottom: 20px; text-align: right; position: relative;';
+          // שיוך המחלקה review-card כדי ליהנות מעיצוב ואפקט ה-hover
+          reviewCard.className = 'review-card';
+          reviewCard.style.marginBottom = '20px';
           
           reviewCard.innerHTML = `
-            <div style="font-size: 3rem; color: var(--accent); opacity: 0.2; position: absolute; top: 10px; right: 15px; line-height: 1; font-family: serif;">”</div>
-            <div style="margin-bottom: 15px; font-size: 1.05rem; color: var(--text); white-space: pre-line; z-index: 1; position: relative;">“${escapeHtml(rev.review)}”</div>
-            <div style="border-top: 1px dashed rgba(212, 163, 115, 0.25); padding-top: 10px; font-weight: 700; color: var(--coffee); font-size: 0.95rem;">
-              ${escapeHtml(rev.name)}
+            <div class="quote-icon">”</div>
+            <div class="review-text">“${escapeHtml(rev.review)}”</div>
+            <div class="review-footer">
+              <span class="reviewer-name">${escapeHtml(rev.name)}</span>
             </div>
           `;
           container.appendChild(reviewCard);
